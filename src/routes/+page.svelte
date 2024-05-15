@@ -1,5 +1,6 @@
 <script>
     import { onMount } from 'svelte';
+    
     let pagination =[
     {name:'home',url:'./home.png',link:'/',description:'navigate back to home page'},
     {name:'basic setup',url:'./setup.png',link:'/setup',description:'learn how to setup svelte native in your pc'},
@@ -19,13 +20,12 @@
     let scrollPosition = 0;
     let themes=[
       {name:'pink',value:'bg-gradient-to-r from-purple-600 to-pink-600'},
-      {name:'cyan',value:'bg-gradient-to-r from-teal-400 to-blue-600'},
       {name:'gold',value:'bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600'},
       {name:'green',value:'bg-gradient-to-r from-green-400 via-green-500 to-green-600'},
       {name:'red',value:'bg-gradient-to-r from-red-600  to-pink-600'},
       {name:'blue',value:'bg-gradient-to-r from-cyan-500 to-blue-500'}      
     ]
-  let themeGradient=themes[Math.floor(Math.random() * 6)].value
+     let themeGradient=themes[0].value
     let showNavIcon=false;
     let showNavData=''
     let showNavDescription=''
@@ -66,6 +66,8 @@
   
 </script>
 
+<title> | Home</title>
+
 
 <!-- <div class="fixed text-2xl top-0 left-0"  on:scroll={handleScroll}>
   {scrollPosition} , {target} , {directionScrolled}
@@ -73,33 +75,50 @@
 <div class="{directionScrolled=='up'?"fixed z-10":""} w-full">
 <div class="flex flex-row w-full justify-between bg-gray-800">
 
-  <button>
-    <p class="text-2xl p-2 px-4 font-bold   {themeGradient} text-transparent bg-clip-text" style="white-space:nowrap">NS Tutorial</p>
-  </button>
+    <button>
+      <p class="text-2xl p-2 px-4 font-bold {themeGradient} text-transparent bg-clip-text" style="white-space:nowrap">SN Tutorial</p>
+    </button>
 
 
 
-<div style="" class="tutorialNavigation md:w-full text-center {!mobileNav?"hidden":""} absolute md:relative right-0 w-1/3  md:flex flex-col md:flex-row  justify-around">
-{#each pagination as page}
-<a href="/{page.link}"><button on:mouseenter={()=>{showNavIcon=true;showNavData=page.name;showNavDescription=page.description;showNavImageURL=page.url}} on:mouseleave={()=>{showNavIcon=false;}} class=" text-gray-300  px-4 py-2 rounded-2xl text-xl hover:  hover:{themeGradient} hover:text-transparent hover:bg-clip-text transition duration-300 ease-in-out">{page.name}</button></a>
-  {/each}    
+    <button on:click={()=>mobileNav=!mobileNav} class="md:hidden text-gray-300 w-1/3 px-4 py-2 rounded-2xl text-3xl hover:  hover:{themeGradient} hover:text-transparent hover:bg-clip-text transition duration-300 ease-in-out">
+      ≕
+    </button>
+
+    <button on:mouseleave={()=>showNavIcon=false} class=""><div style=""  class="tutorialNavigation md:w-full text-center hidden w-1/3  md:flex flex-col md:flex-row justify-around">
+    {#each pagination as page}
+    <a href="/{page.link}"><button on:mouseenter={()=>{showNavIcon=true;showNavData=page.name;showNavDescription=page.description;showNavImageURL=page.url}} class=" text-gray-300  px-4 py-2 rounded-2xl text-xl hover:  hover:{themeGradient} hover:text-transparent hover:bg-clip-text transition duration-300 ease-in-out">{page.name}</button></a>
+      {/each}    
+    </div>
+    </button>
+
+
+
+    <select class="text-xl w-auto bg-gray-800 border-0 focus:outline-none text-gray-300 outline-none {themeGradient}">
+      {#each themes as theme}
+        <option class="w-full" on:click={()=>themeGradient=theme.value}>{theme.name}</option>
+      {/each}
+    </select>
+
 </div>
 
-<select class="text-xl bg-gray-800 text-gray-300 outline-none {themeGradient}">
-  {#each themes as theme}
-    <option on:click={()=>themeGradient=theme.value}>{theme.name}</option>
-  {/each}
-</select>
+<div class="bg-black bg-opacity-80 w-full hidden  flex-col justify-center {showNavIcon?"md:flex":"hidden"}" style="height:100vh;">
+    <div class="w-full flex flex-row justify-center"><img class="w-1/6 p-6" src={showNavImageURL} alt={showNavData}></div>
+      <div class="w-full flex flex-row justify-center">
+      <button class="text-4xl text-white rounded-2xl px-4 py-2 {themeGradient}"> {"<"+showNavData+"/>"}</button>
+    </div> 
+    <p class="w-full py-6 text-3xl text-white text-center">{showNavDescription}</p>
+</div>
 
-</div>
-<div class="bg-black bg-opacity-80 w-full flex flex-col justify-center {showNavIcon?" transition duration-600 ease-in-out":"hidden"}" style="height:100vh;">
- <div class="w-full flex flex-row justify-center"><img class="w-1/6 p-6" src={showNavImageURL} alt={showNavData}></div>
-  <div class="w-full flex flex-row justify-center">
-  <button class="text-4xl text-white rounded-2xl px-4 py-2 {themeGradient}"> {"<"+showNavData+"/>"}</button>
- </div> 
- <p class="w-full py-6 text-3xl text-white text-center">{showNavDescription}</p>
- 
-</div>
+<button class="w-full h-full flex flex-col bg-black bg-opacity-80 py-10 {!mobileNav?"hidden":""} " style="height:100vh">
+  <div style=""  class=" px-5 tutorialNavigation h-1/2 md:w-full text-center md:hidden flex flex-col justify-around">
+  {#each pagination as page}
+  <a class="w-full" href="/{page.link}"><button on:mouseenter={()=>{showNavIcon=true;showNavData=page.name;showNavDescription=page.description;showNavImageURL=page.url}} class=" text-gray-300  w-full px-4 py-2 rounded-2xl text-xl hover:  hover:{themeGradient} hover:text-transparent hover:bg-clip-text transition duration-300 ease-in-out">{page.name}</button></a>
+    {/each}    
+  </div>
+</button>
+
+
 </div>
 
 
