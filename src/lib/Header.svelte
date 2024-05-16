@@ -36,66 +36,15 @@
       directionScrolled=((currentScroll-window.scrollY)>0)?'up':'down'  
       currentScroll=window.scrollY;
       scrollPosition = window.scrollY;
-    
     }
-    
+
 
     onMount(() => {
-      setTimeout(()=>{
-        isLoading=false;
-      },2000)
-
+    
     });
   
 </script>
 
 
-<div class="{isLoading?"hidden":""} {directionScrolled=='up'?"fixed z-10":""} w-full">
-    <div class="flex flex-row w-full justify-between bg-gray-800">
-    
-        <button>
-          <p class="text-2xl p-2 px-4 font-bold {themeGradient} text-transparent bg-clip-text" style="white-space:nowrap">SN Tutorial</p>
-        </button>
-    
-    
-    
-        <button on:click={()=>mobileNav=!mobileNav} class="md:hidden text-gray-300 w-1/3 px-4 py-2 rounded-2xl text-3xl hover:  hover:{themeGradient} hover:text-transparent hover:bg-clip-text transition duration-300 ease-in-out">
-          ≕
-        </button>
-    
-        <button on:mouseleave={()=>showNavIcon=false} class=""><div style=""  class="tutorialNavigation md:w-full text-center hidden w-1/3  md:flex flex-col md:flex-row justify-around">
-        {#each pagination as page}
-        <a class="" href="/{page.link}"><button on:mouseenter={()=>{showNavIcon=true;showNavData=page.name;showNavDescription=page.description;showNavImageURL=page.url}} class=" text-gray-300 px-4 py-2 rounded-2xl text-xl hover:  hover:{themeGradient} hover:text-transparent hover:bg-clip-text transition duration-300 ease-in-out">{page.name}</button></a>
-          {/each}    
-        </div>
-        </button>
-    
-    
-    
-        <select class="text-xl w-auto bg-gray-800 border-0 focus:outline-none text-gray-300 outline-none {themeGradient}">
-          {#each themes as theme}
-            <option class="w-full" on:click={()=>themeGradient=theme.value}>{theme.name}</option>
-          {/each}
-        </select>
-    
-    </div>
-    
-    <div class="bg-black bg-opacity-90 w-full hidden  flex-col justify-center {showNavIcon?"md:flex":"hidden"}" style="height:100vh;">
-        <div class="w-full flex flex-row justify-center"><img class="w-1/6 p-6" src={showNavImageURL} alt={showNavData}></div>
-          <div class="w-full flex flex-row justify-center">
-          <button class="text-4xl text-white rounded-2xl px-4 py-2 {themeGradient}"> {"<"+showNavData+"/>"}</button>
-        </div> 
-        <p class="w-full py-6 text-3xl text-white text-center">{showNavDescription}</p>
-    </div>
-    
-    <button class="w-full h-full flex flex-col bg-black bg-opacity-80 py-10 {!mobileNav?"hidden":""} " style="height:100vh">
-      <div style=""  class=" px-5 tutorialNavigation h-1/2 md:w-full text-center md:hidden flex flex-col justify-around">
-      {#each pagination as page}
-      <a class="w-full font-bold" href="/{page.link}"><button on:mouseenter={()=>{showNavIcon=true;showNavData=page.name;showNavDescription=page.description;showNavImageURL=page.url}} class=" text-gray-300 w-full px-4 py-2 rounded-2xl text-xl hover:  hover:{themeGradient} hover:text-transparent hover:bg-clip-text transition duration-300 ease-in-out">{page.name}</button></a>
-        {/each}    
-      </div>
-    </button>
-    </div>
-    
 
   
