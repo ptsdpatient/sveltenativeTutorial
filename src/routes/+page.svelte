@@ -147,8 +147,8 @@
   </div>
 
 <div class="md:w-1/2 w-full h-1/4 md:h-auto mx-auto flex flex-col md:flex-row justify-around text-4xl">
- <button class="{themeGradient} hover:bg-clip-border bg-clip-text text-transparent px-4 py-2 border-0 rounded-2xl hover:text-white hover:{themeGradient} transition-all duration-300 ease-in-out">Get Started 🖥</button>
-  <button class="{themeGradient} hover:bg-clip-border bg-clip-text text-transparent px-4 py-2 border-0  rounded-2xl hover:text-white hover:{themeGradient} transition-all duration-300 ease-in-out">Learn Basics 📖</button>
+  <a href="2"><button class="{themeGradient} hover:bg-clip-border bg-clip-text text-transparent px-4 py-2 border-0 rounded-2xl hover:text-white hover:{themeGradient} transition-all duration-300 ease-in-out">Get Started </button>🖥</a>
+  <a  href="2"><button class="{themeGradient} hover:bg-clip-border bg-clip-text text-transparent px-4 py-2 border-0  rounded-2xl hover:text-white hover:{themeGradient} transition-all duration-300 ease-in-out">Learn Basics </button>📖</a>
 </div>
 
 </div>
