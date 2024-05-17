@@ -138,8 +138,8 @@
 
 
 <!-- line skip -->
-<div class:scrollShow={showDIV} class="w-full h-full flex flex-col justify-center md:gap-10" style="height:100vh">
-  <div class="h-3/4 flex flex-col justify-center md:justify-center">
+<div class:scrollShow={showDIV} class="w-full h-full flex flex-col justify-around md:justify-center md:gap-20" style="height:100vh">
+  <div class="h-1/2 flex flex-col justify-start md:justify-center">
   <p class="md:text-5xl text-4xl font-bold p-5 pt-20 text-center {themeGradient} bg-clip-text text-transparent ">Welcome to the Svelte Native tutorial!</p>
   <p class="md:w-3/4 w-full md:px-0 px-3 mx-auto md:text-3xl text-2xl text-center">
     Are you looking for a tutorial to learn how to build mobile apps with Svelte? 📱✨ Well, look no further because this tutorial covers everything you need to know about mobile app development with Svelte Native! 🚀 📚</p>
@@ -199,50 +199,51 @@
 <p class=" md:px-20 hiddenDiv px-5  md:text-center text-2xl">Svelte is very easy to understand  and if you are new to svelte this tutorial has a page dedicated to explain the basics of svelte here <a href="/basics" class="{themeGradient} bg-clip-text text-transparent rounded-2xl hover:underline">Svelte Basics</a></p>
 <br>
 <br>
-<p class="md:text-4xl text-3xl px-5 hiddenDiv font-bold md:px-20  md:text-center {themeGradient} bg-clip-text text-transparent">Looking for support?</p>
+<p class="md:text-4xl text-4xl text-center px-5 hiddenDiv font-bold md:px-20  {themeGradient} bg-clip-text text-transparent">Looking for support?</p>
 <br>
 
 
-<div class="w-full mx-auto flex flex-col md:flex-row gap-10 justify-around">
+<div class="w-full px-2 md:w-full mx-auto flex flex-col md:flex-row gap-10 justify-around">
   <div class="w-full md:w-1/4 gap-2  rounded-xl flex flex-col justify-around p-2 ">
       <div class="flex flex-row mx-auto gap-4 justify-center w-full">
-        <img class="w-1/4 p-1" src="../svelte.png" alt="svelte">
-        <p class=" text-4xl my-auto text-right {themeGradient} bg-clip-text text-transparent">Svelte JS</p>
+        <img class="w-2/12 p-1" src="../svelte.png" alt="svelte">
+        <p class=" text-3xl my-auto text-right {themeGradient} bg-clip-text text-transparent">Svelte JS</p>
       </div>
       <div class="w-full flex flex-col ">
-        <button class="flex flex-row gap-1 justify-center text-2xl my-auto items-center rounded-2xl hover:text-white hover:{themeGradient}"> <img class="w-2/12 my-auto p-1" src="../www.png" alt="svelte"> Visit Site</button>
-        <button class="flex flex-row gap-1 justify-center text-2xl my-auto items-center rounded-2xl hover:text-white hover:{themeGradient}"> <img class="w-2/12 my-auto p-1" src="../discord.png" alt="svelte"> Join Server</button>
+        <button class="flex flex-row gap-1 justify-center text-xl my-auto items-center rounded-2xl hover:text-white hover:{themeGradient}"> <img class="w-2/12 my-auto p-1" src="../www.png" alt="svelte"> Visit Site</button>
+        <button class="flex flex-row gap-1 justify-center text-xl my-auto items-center rounded-2xl hover:text-white hover:{themeGradient}"> <img class="w-2/12 my-auto p-1" src="../discord.png" alt="svelte"> Join Server</button>
         </div>
-</div>
-  <div class="w-full md:w-1/4 gap-2 rounded-xl flex flex-col justify-around p-2">
+      </div>
+    <div class="w-full md:w-1/4 gap-2 rounded-xl flex flex-col justify-around p-2">
     <div class="flex flex-row mx-auto gap-4 justify-center w-full">
-      <img class="w-1/4" src="../svelte-native.png" alt="svelte">
-      <p class=" text-4xl my-auto text-right {themeGradient} bg-clip-text text-transparent" style="white-space:nowrap;">Svelte Native</p>
+      <img class="w-2/12" src="../svelte-native.png" alt="svelte">
+      <p class=" text-3xl my-auto text-right {themeGradient} bg-clip-text text-transparent" style="white-space:nowrap;">Svelte Native</p>
     </div>
     <div class="w-full flex flex-col ">
-      <button class="flex flex-row gap-1 justify-center text-2xl my-auto items-center rounded-2xl hover:text-white hover:{themeGradient}"> <img class="w-2/12 my-auto p-1" src="../www.png" alt="svelte"> Visit Site</button>
-      <button class="flex flex-row gap-1 justify-center text-2xl my-auto items-center rounded-2xl hover:text-white hover:{themeGradient}"> <img class="w-2/12 my-auto p-1" src="../discord.png" alt="svelte"> Join Server</button>
+      <button class="flex flex-row gap-1 justify-center text-xl my-auto items-center rounded-2xl hover:text-white hover:{themeGradient}"> <img class="w-2/12 my-auto p-1" src="../www.png" alt="svelte"> Visit Site</button>
+      <button class="flex flex-row gap-1 justify-center text-xl my-auto items-center rounded-2xl hover:text-white hover:{themeGradient}"> <img class="w-2/12 my-auto p-1" src="../discord.png" alt="svelte"> Join Server</button>
       </div>
+      
 </div>  
-
-</div>
-
-<br>
-<div class="w-full md:w-1/4 gap-2  mx-auto rounded-xl flex flex-col justify-between p-2">
-  <div class="flex flex-row mx-auto gap-4 justify-center w-full">
-    <img class="w-1/3 rounded-3xl" src="./tanishq.png" alt="svelte">
-    <p class=" text-4xl my-auto text-right {themeGradient} bg-clip-text text-transparent" style="white-space:nowrap">Tanishq Dhote</p>
+<div class="w-full md:w-1/4 gap-4 rounded-xl flex flex-col justify-around md:p-2 ">
+  <div class="flex flex-row gap-4 mx-auto justify-center w-full">
+    <img class="w-2/12 rounded-3xl" src="./tanishq.png" alt="svelte">
+    <p class=" text-3xl my-auto text-right {themeGradient} bg-clip-text text-transparent" style="white-space:nowrap">Tanishq Dhote</p>
   </div>
   <div class="w-full flex flex-col ">
-    <button class="flex flex-row gap-1 justify-center text-2xl my-auto items-center rounded-2xl hover:text-white hover:{themeGradient}"> <img class="w-2/12 my-auto p-1" src="../www.png" alt="svelte"> Visit Site</button>
-    <button class="flex flex-row gap-1 justify-center text-2xl my-auto items-center rounded-2xl hover:text-white hover:{themeGradient}"> <img class="w-2/12 my-auto p-1" src="../discord.png" alt="svelte"> Join Server</button>
-  </div>
+    <button class="flex flex-row gap-1 justify-center text-xl my-auto items-center rounded-2xl hover:text-white hover:{themeGradient}"> <img class="w-2/12 my-auto p-1" src="../www.png" alt="svelte"> Visit Site</button>
+    <button class="flex flex-row gap-1 justify-center text-xl my-auto items-center rounded-2xl hover:text-white hover:{themeGradient}"> <img class="w-2/12 my-auto p-1" src="../discord.png" alt="svelte"> Join Server</button>
+    </div>
 </div>
+</div>
+
+<br>
+
 
 
 
 <br>
-
+<div class="w-full justify-between bg-gray-800 text-white text-2xl md:text-xl text-center py-2">A tutorial made by Tanishq</div>
 
 
 <!-- <p class:scrollShow={showDIV}  class="hiddenDiv text-4xl text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi debitis in laudantium maxime, quasi exercitationem! In praesentium excepturi, ea, earum eum, doloribus expedita obcaecati laudantium et ullam reiciendis voluptatum veritatis.</p>
