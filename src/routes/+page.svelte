@@ -78,17 +78,21 @@
 </script>
 
 <!-- loading -->
-<div class="{isLoading?"fixed":"hidden"}" style=";height:100vh;width:100vw">
+<!-- <div class="{isLoading?"fixed":"hidden"}" style=";height:100vh;width:100vw;">
   <div class="{themeGradient} flex flex-col justify-center w-full h-full">
     <p style="place-items:center;" class="w-full text-center text-5xl px-4 py-2 rounded-xl font-bold text-gray-300">The Svelte Native Tutorial</p>
     <div class="w-1/2 mx-auto"><p class="text-xl text-right text-gray-300">by Tanishq Dhote</p></div>
   </div>
-</div>
+</div> -->
 
 <title>Home</title>
 
 
 <!-- header -->
+<div class="w-full h-full pattern bg-opacity-50">
+
+
+
 <div class="{isLoading?"hidden":""} {directionScrolled=='up'?"fixed z-10":""} w-full">
   <div class="flex flex-row w-full justify-between bg-gray-800">
   
@@ -110,10 +114,9 @@
       </button>
   
 
-  
   </div>
   
-  <div class="bg-black bg-opacity-90 w-full hidden  flex-col justify-center {showNavIcon?"md:flex":"hidden"}" style="height:100vh;">
+  <div class="bg-black bg-opacity-80 w-full hidden  flex-col justify-center {showNavIcon?"md:flex":"hidden"}" style="height:100vh;background-image:url('../leave.png');">
       <div class="w-full flex flex-row justify-center"><img class="w-1/6 p-6" src={showNavImageURL} alt={showNavData}></div>
         <div class="w-full flex flex-row justify-center">
         <button class="text-4xl text-white rounded-2xl px-4 py-2 {themeGradient}"> {"<"+showNavData+"/>"}</button>
@@ -195,10 +198,49 @@
 <br>
 <p class=" md:px-20 hiddenDiv px-5  md:text-center text-2xl">Svelte is very easy to understand  and if you are new to svelte this tutorial has a page dedicated to explain the basics of svelte here <a href="/basics" class="{themeGradient} bg-clip-text text-transparent rounded-2xl hover:underline">Svelte Basics</a></p>
 <br>
-
+<br>
 <p class="md:text-4xl text-3xl px-5 hiddenDiv font-bold md:px-20  md:text-center {themeGradient} bg-clip-text text-transparent">Looking for support?</p>
 <br>
-<p class=" md:px-20 hiddenDiv px-5  md:text-center text-2xl">Svelte is very easy to understand  and if you are new to svelte this tutorial has a page dedicated to explain the basics of svelte here <a href="/basics" class="{themeGradient} bg-clip-text text-transparent rounded-2xl hover:underline">Svelte Basics</a></p>
+
+
+<div class="w-full mx-auto flex flex-col md:flex-row gap-10 justify-around">
+  <div class="w-full md:w-1/4 gap-2  rounded-xl flex flex-col justify-around p-2 ">
+      <div class="flex flex-row mx-auto gap-4 justify-center w-full">
+        <img class="w-1/4 p-1" src="../svelte.png" alt="svelte">
+        <p class=" text-4xl my-auto text-right {themeGradient} bg-clip-text text-transparent">Svelte JS</p>
+      </div>
+      <div class="w-full flex flex-col ">
+        <button class="flex flex-row gap-1 justify-center text-2xl my-auto items-center rounded-2xl hover:text-white hover:{themeGradient}"> <img class="w-2/12 my-auto p-1" src="../www.png" alt="svelte"> Visit Site</button>
+        <button class="flex flex-row gap-1 justify-center text-2xl my-auto items-center rounded-2xl hover:text-white hover:{themeGradient}"> <img class="w-2/12 my-auto p-1" src="../discord.png" alt="svelte"> Join Server</button>
+        </div>
+</div>
+  <div class="w-full md:w-1/4 gap-2 rounded-xl flex flex-col justify-around p-2">
+    <div class="flex flex-row mx-auto gap-4 justify-center w-full">
+      <img class="w-1/4" src="../svelte-native.png" alt="svelte">
+      <p class=" text-4xl my-auto text-right {themeGradient} bg-clip-text text-transparent" style="white-space:nowrap;">Svelte Native</p>
+    </div>
+    <div class="w-full flex flex-col ">
+      <button class="flex flex-row gap-1 justify-center text-2xl my-auto items-center rounded-2xl hover:text-white hover:{themeGradient}"> <img class="w-2/12 my-auto p-1" src="../www.png" alt="svelte"> Visit Site</button>
+      <button class="flex flex-row gap-1 justify-center text-2xl my-auto items-center rounded-2xl hover:text-white hover:{themeGradient}"> <img class="w-2/12 my-auto p-1" src="../discord.png" alt="svelte"> Join Server</button>
+      </div>
+</div>  
+
+</div>
+
+<br>
+<div class="w-full md:w-1/4 gap-2  mx-auto rounded-xl flex flex-col justify-between p-2">
+  <div class="flex flex-row mx-auto gap-4 justify-center w-full">
+    <img class="w-1/3 rounded-3xl" src="./tanishq.png" alt="svelte">
+    <p class=" text-4xl my-auto text-right {themeGradient} bg-clip-text text-transparent" style="white-space:nowrap">Tanishq Dhote</p>
+  </div>
+  <div class="w-full flex flex-col ">
+    <button class="flex flex-row gap-1 justify-center text-2xl my-auto items-center rounded-2xl hover:text-white hover:{themeGradient}"> <img class="w-2/12 my-auto p-1" src="../www.png" alt="svelte"> Visit Site</button>
+    <button class="flex flex-row gap-1 justify-center text-2xl my-auto items-center rounded-2xl hover:text-white hover:{themeGradient}"> <img class="w-2/12 my-auto p-1" src="../discord.png" alt="svelte"> Join Server</button>
+  </div>
+</div>
+
+
+
 <br>
 
 
@@ -208,10 +250,18 @@
 <p  class="hiddenDiv text-4xl text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi debitis in laudantium maxime, quasi exercitationem! In praesentium excepturi, ea, earum eum, doloribus expedita obcaecati laudantium et ullam reiciendis voluptatum veritatis.</p>
 <p class="hiddenDiv text-4xl text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi debitis in laudantium maxime, quasi exercitationem! In praesentium excepturi, ea, earum eum, doloribus expedita obcaecati laudantium et ullam reiciendis voluptatum veritatis.</p>
  -->
-
+</div>
 
 <style>
-
+  ::selection{
+    color:rgb(255, 49, 176);
+  }
+    .pattern{
+      /* background-color: blue; */
+      background-color: rgba(255, 79, 182, 0.089);
+      background-image:url('../leave.png');
+      background-repeat: repeat;
+    }
     .hiddenDiv{
       opacity:0;
       transition:all 2s;
