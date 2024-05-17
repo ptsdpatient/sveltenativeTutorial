@@ -1,7 +1,11 @@
 <script>
     import { onMount,onDestroy } from 'svelte';
+    import woman from '../lib/images/woman-eye.png'
+    import vue from '../lib/images/vue.png'
+    import react from '../lib/images/react.png'
+    import angular from '../lib/images/angular.png'
 
-    import icon from '../lib/images/favicon.png'
+
     let visitorCount = 0;
     const updateVisitorCount = () => {
     visitorCount = parseInt(localStorage.getItem('visitorCount')) || 0;
@@ -23,10 +27,6 @@
     let scrollPosition = 0;
     let themes=[
       {name:'pink',value:'bg-gradient-to-r from-purple-600 to-pink-600'},
-      {name:'gold',value:'bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600'},
-      {name:'green',value:'bg-gradient-to-r from-green-400 via-green-500 to-green-600'},
-      {name:'red',value:'bg-gradient-to-r from-red-600  to-pink-600'},
-      {name:'blue',value:'bg-gradient-to-r from-cyan-500 to-blue-500'}      
     ]
      let themeGradient=themes[0].value
     let showNavIcon=false;
@@ -59,6 +59,7 @@
     });
 
     onMount(() => {
+    window.scrollTo(0,0)
       updateVisitorCount();
     visitorCount++;
     if (typeof localStorage !== 'undefined') localStorage.setItem('visitorCount', visitorCount.toString());
@@ -97,24 +98,18 @@
   
   
   
-      <button on:click={()=>mobileNav=!mobileNav} class="md:hidden text-gray-300 w-1/3 px-4 py-2 rounded-2xl text-3xl hover:  hover:{themeGradient} hover:text-transparent hover:bg-clip-text transition duration-300 ease-in-out">
+      <button on:click={()=>mobileNav=!mobileNav} class="md:hidden text-gray-300 w-1/6 px-4 py-2 rounded-2xl text-3xl hover:  hover:{themeGradient} hover:text-transparent hover:bg-clip-text transition duration-300 ease-in-out">
         ≕
       </button>
   
-      <button on:mouseleave={()=>showNavIcon=false} class=""><div style=""  class="tutorialNavigation md:w-full text-center hidden w-1/3  md:flex flex-col md:flex-row justify-around">
+      <button on:mouseleave={()=>showNavIcon=false} class="hidden md:flex"><div class="tutorialNavigation md:w-full text-center hidden w-1/3  md:flex flex-col md:flex-row justify-around">
       {#each pagination as page}
       <a class="" href="/{page.link}"><button on:mouseenter={()=>{showNavIcon=true;showNavData=page.name;showNavDescription=page.description;showNavImageURL=page.url}} class=" text-gray-300 px-4 py-2 rounded-2xl text-xl hover:  hover:{themeGradient} hover:text-transparent hover:bg-clip-text transition duration-300 ease-in-out">{page.name}</button></a>
       {/each}    
       </div>
       </button>
   
-  
-  
-      <select class="text-xl w-auto bg-gray-800 border-0 focus:outline-none text-gray-300 outline-none {themeGradient}">
-        {#each themes as theme}
-          <option class="w-full" on:click={()=>themeGradient=theme.value}>{theme.name}</option>
-        {/each}
-      </select>
+
   
   </div>
   
@@ -126,29 +121,30 @@
       <p class="w-full py-6 text-3xl text-white text-center">{showNavDescription}</p>
   </div>
   
-  <button class="w-full h-full flex flex-col bg-black bg-opacity-80 py-10 {!mobileNav?"hidden":""} " style="height:100vh">
-    <div style=""  class=" px-5 tutorialNavigation h-1/2 md:w-full text-center md:hidden flex flex-col justify-center">
-    {#each pagination as page}
-    <a class="w-full font-bold" href="/{page.link}"><button on:mouseenter={()=>{showNavIcon=true;showNavData=page.name;showNavDescription=page.description;showNavImageURL=page.url}} class=" text-gray-300 w-full text-center px-4 py-2 rounded-2xl text-xl hover:  hover:{themeGradient} hover:text-transparent hover:bg-clip-text transition duration-300 ease-in-out">{page.name}</button></a>
+  <button class="w-full h-full flex flex-col bg-gray-800 py-10 {!mobileNav?"hidden":""} " style="height:100vh">
+    <div class="w-full h-1/2 text-center md:hidden flex flex-col justify-around">
+      {#each pagination as page}
+      <a class="w-2/3  my-auto mx-auto font-bold" href="/{page.link}"><button on:click={()=>{mobileNav=false}}  class="{themeGradient}  text-2xl hover:bg-clip-border md:bg-clip-text md:text-transparent px-4 py-2 border-0 rounded-2xl hover:text-white text-white hover:{themeGradient} transition-all duration-300 ease-in-out">{"<"+page.name+"/>"}</button></a>
       {/each}    
     </div>
   </button>
+
   </div>
   
 
 
 
 <!-- line skip -->
-<br>
-<div class:scrollShow={showDIV} class="w-full h-full flex flex-col justify-center gap-20 py-20 md:py-10" style="height:100vh">
-  <div>
-  <p class="md:text-5xl text-4xl font-bold p-5 text-center {themeGradient} bg-clip-text text-transparent ">Welcome to the Svelte Native tutorial!</p>
-  <p class="md:w-3/4 w-full md:px-0 px-3 mx-auto md:text-2xl text-xl ">Are you looking for a web framework that works seamlessly with vanilla js and able to make mobile app? look no further because this tutorial covers Mobile App Development with Svelte Native. </p>
+<div class:scrollShow={showDIV} class="w-full h-full flex flex-col justify-center md:gap-10" style="height:100vh">
+  <div class="h-3/4 flex flex-col justify-center md:justify-center">
+  <p class="md:text-5xl text-4xl font-bold p-5 pt-20 text-center {themeGradient} bg-clip-text text-transparent ">Welcome to the Svelte Native tutorial!</p>
+  <p class="md:w-3/4 w-full md:px-0 px-3 mx-auto md:text-3xl text-2xl text-center">
+    Are you looking for a tutorial to learn how to build mobile apps with Svelte? 📱✨ Well, look no further because this tutorial covers everything you need to know about mobile app development with Svelte Native! 🚀 📚</p>
   </div>
 
-<div class="md:w-1/2 w-full h-1/4 md:h-auto mx-auto flex flex-col md:flex-row justify-around text-4xl">
-  <a href="2"><button class="{themeGradient} hover:bg-clip-border bg-clip-text text-transparent px-4 py-2 border-0 rounded-2xl hover:text-white hover:{themeGradient} transition-all duration-300 ease-in-out">Get Started </button>🖥</a>
-  <a  href="2"><button class="{themeGradient} hover:bg-clip-border bg-clip-text text-transparent px-4 py-2 border-0  rounded-2xl hover:text-white hover:{themeGradient} transition-all duration-300 ease-in-out">Learn Basics </button>📖</a>
+<div class="md:w-1/2 w-full h-1/4  mx-auto flex flex-col md:flex-row gap-5  text-4xl">
+  <a href="2" class="mx-auto"><button class="{themeGradient} hover:bg-clip-border md:bg-clip-text md:text-transparent px-4 py-2 border-0 rounded-2xl hover:text-white text-white hover:{themeGradient} transition-all duration-300 ease-in-out">Get Started </button> 🖥</a>
+  <a  href="2" class="mx-auto"><button class="{themeGradient} hover:bg-clip-border md:bg-clip-text md:text-transparent px-4 py-2 border-0  rounded-2xl hover:text-white text-white hover:{themeGradient} transition-all duration-300 ease-in-out">Learn Basics </button> 📖</a>
 </div>
 
 </div>
@@ -157,25 +153,54 @@
 <br>
 <p class="md:text-5xl text-4xl  hiddenDiv font-bold  md:px-20 text-center md:text-left {themeGradient} bg-clip-text text-transparent  ">So what is Svelte Native? </p>
 <br>
-<p class=" md:px-20 hiddenDiv px-5  md:text-left text-xl">Svelte Native is a framework used for building native mobile application. With Svelte Native we can leverage svelte's reactive features and high performance to create robust mobile apps. Svelte in itself is a web framework which is quite easy to learn and works compile time so the final product is likely to be faster. Native Script is a javascript framework that is used to develop mobile apps for ios and android platform with javascript frameworks like svelte, angular, react,vue or vanilla js.</p>
+<p class=" md:px-20 hiddenDiv px-5 md:text-2xl md:text-left text-xl"><a href="https://svelte-native.technology"   class="{themeGradient} bg-clip-text text-transparent rounded-2xl hover:underline">Svelte Native</a> is a framework used for building native mobile application. With Svelte Native we can leverage svelte's reactive features and high performance to create robust mobile apps. Svelte in itself is a web framework which is quite easy to learn and works compile time so the final product is likely to be faster. Native Script is a javascript framework that is used to develop mobile apps for ios and android platform with javascript frameworks like svelte, angular, react, vue or vanilla js.</p>
 <br>
-<div class="w-full hiddenDiv flex text-2xl md:text-6xl font-bold md:flex-row justify-around items-center {themeGradient} bg-clip-text text-transparent ">
+<div class="hiddenDiv w-3/4 mx-auto flex text-2xl md:text-6xl font-bold md:flex-row justify-around items-center {themeGradient} bg-clip-text text-transparent ">
   <img class="md:w-1/6 md:p-4 w-1/4 p-1" src="../svelte.png" alt="html">
   +
   <img class="md:w-1/6 md:p-4 w-1/4 p-1" src="../nativescript.png" alt="native">
   =
   <img class="md:w-1/6 md:p-4 w-1/4 p-1" src="../svelte-native.png" alt="android">
 </div>
-<br><br>
-<p class="md:text-5xl text-4xl  hiddenDiv font-bold  md:px-20 text-center md:text-right {themeGradient} bg-clip-text text-transparent ">Why pick svelte?</p>
+
 <br>
-<p class="md:px-20 hiddenDiv px-5  md:text-left text-xl">Yes, why pick svelte over the rest of the javascript framework which are more popular and in demand in the tech sector? Answer is simple, for yourself. Svelte is as simple as vanilla js, with its reactive features its simple and robust, thus many developers love it. Along side the svelte kit with navigation features svelte almost becomes invincible in the javascript market</p>
+<br>
 <br>
 
-<p class="md:text-5xl text-4xl  hiddenDiv font-bold  md:px-20 text-center md:text-right {themeGradient} bg-clip-text text-transparent  ">Do you need any prior Svelte experience to get started with Svelte Native?</p>
+<p class="md:text-5xl text-4xl  hiddenDiv font-bold  md:px-20 text-center md:text-right {themeGradient} bg-clip-text text-transparent ">Why pick svelte?</p>
 <br>
-<p class=" md:px-20 hiddenDiv px-5  md:text-left text-xl">Svelte is very easy to understand and if you are new to svelte this tutorial has a page dedicated to explain the basics of svelte here <a  href="/basics"><button class="{themeGradient} bg-clip-text hover:bg-clip-content text-transparent rounded-2xl hover:text-white hover:{themeGradient}">{" <svelte basics/> "} </button></a></p>
-  <br>
+<p class="md:px-20 hiddenDiv px-5 md:text-2xl md:text-left text-xl">Yes, why pick <a class="{themeGradient} bg-clip-text text-transparent rounded-2xl hover:underline" href="https://svelte.dev/">Svelte</a> over other javascript frameworks which are more popular and in demand in the tech sector? Answer is simple, for yourself. Svelte is as simple as html,css and js and with its reactive and compile time features its fast and robust, thus many developers love it. Along side with svelte kit's navigation features, svelte almost becomes invincible in the javascript framework market</p>
+
+<br>
+<br>
+
+<div class="hiddenDiv md:w-4/5 md:px-10 w-full mx-auto flex text-2xl md:text-6xl font-bold flex-col md:flex-row justify-between items-center {themeGradient} bg-clip-text text-transparent ">
+  <div class="w-full md:w-3/6 md:p-5 flex flex-row justify-around">
+    <img class="md:w-1/3 w-1/4 " src={react} alt="react">
+    <img class="md:w-1/3 w-1/4 " src={angular} alt="react">
+    <img class="md:w-1/3 w-1/4 " src={vue} alt="react">
+  </div>
+  /
+  <div class="w-full md:w-3/6 flex flex-row justify-center">
+  <img class="md:w-1/2 w-1/2 md:p-0 p-1" src={woman} alt="woman">
+  <img class="md:w-1/4 w-1/4 md:p-0 p-1" src="../svelte.png" alt="svelte">
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+
+<p class="md:text-4xl text-3xl px-5 hiddenDiv font-bold md:px-20  md:text-center {themeGradient} bg-clip-text text-transparent  ">Do you need any prior Svelte experience to get started with Svelte Native?</p>
+<br>
+<p class=" md:px-20 hiddenDiv px-5  md:text-center text-2xl">Svelte is very easy to understand  and if you are new to svelte this tutorial has a page dedicated to explain the basics of svelte here <a href="/basics" class="{themeGradient} bg-clip-text text-transparent rounded-2xl hover:underline">Svelte Basics</a></p>
+<br>
+
+<p class="md:text-4xl text-3xl px-5 hiddenDiv font-bold md:px-20  md:text-center {themeGradient} bg-clip-text text-transparent">Looking for support?</p>
+<br>
+<p class=" md:px-20 hiddenDiv px-5  md:text-center text-2xl">Svelte is very easy to understand  and if you are new to svelte this tutorial has a page dedicated to explain the basics of svelte here <a href="/basics" class="{themeGradient} bg-clip-text text-transparent rounded-2xl hover:underline">Svelte Basics</a></p>
+<br>
+
 
 
 <!-- <p class:scrollShow={showDIV}  class="hiddenDiv text-4xl text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi debitis in laudantium maxime, quasi exercitationem! In praesentium excepturi, ea, earum eum, doloribus expedita obcaecati laudantium et ullam reiciendis voluptatum veritatis.</p>
