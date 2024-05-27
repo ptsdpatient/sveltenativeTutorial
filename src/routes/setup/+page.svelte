@@ -99,44 +99,61 @@
         
         <p class="hiddenDiv md:text-5xl text-3xl px-5 font-bold md:px-20  md:text-center {themeGradient} bg-clip-text text-transparent  ">Lets get started!</p>
         <br><br>
-
-        <div class="w-1/5 relative mx-auto rounded-xl bg-white transition-all duration-300 ease-in-out">
-        <button on:click={()=>showPlatformOptions=!showPlatformOptions} class="flex flex-row justify-between items-center  border-1 border-gray-300"><div class="w-full flex flex-row items-center"><img class="w-1/3 px-2" src={currentPlatformImageURL} alt=""><p class="text-2xl {themeGradient} bg-clip-text text-transparent transition-all duration-300 ease-in-out">{currentPlatformName}</p></div><p class="text-2xl p-2 px-4 text-white {themeGradient} bg-clip-text text-transparent" >{showPlatformOptions?"⋏":"⋎"}</p></button>
-        <div class="w-full {showPlatformOptions?"absolute my-1":"hidden"} z-10 mx-auto overflow-y-auto rounded-xl" >
+        
+        <div class="w-1/2 flex flex-row justify-center items-center mx-auto">
+        <p class="{themeGradient} px-5 bg-clip-text text-right text-transparent text-3xl">Platform : </p>
+        <div class="w-1/3 relative rounded-xl  transition-all duration-300 ease-in-out">
+        <button on:click={()=>showPlatformOptions=!showPlatformOptions} class="flex flex-row justify-between bg-white rounded-xl items-center border-1 border-gray-300"><div class="w-full flex flex-row items-center"><img class="w-1/3 px-2" src={currentPlatformImageURL} alt=""><p class="text-2xl {themeGradient} bg-clip-text text-transparent transition-all duration-300 ease-in-out">{currentPlatformName}</p></div><p class="text-2xl p-2 px-4 text-white {themeGradient} bg-clip-text text-transparent" >{showPlatformOptions?"⋏":"⋎"}</p></button>
+        <div  class="w-full {showPlatformOptions?"absolute my-1 ":"hidden"} z-10 mx-auto overflow-y-auto rounded-xl" >
           {#each platforms as platform}
-          <button on:click={()=>{currentPlatformImageURL=platform.icon;currentPlatformName=platform.platform;showPlatformOptions=false;}} class="flex flex-row items-center text-2xl bg-white rounded-xl p-2 border-1 border-gray-300" style="transform:scale(0.85)"><img class="w-1/4 px-2" src={platform.icon} alt=""><p class=" t {themeGradient} bg-clip-text text-transparent">{platform.platform}</p></button>
+          <button on:click={()=>{currentPlatformImageURL=platform.icon;currentPlatformName=platform.platform;showPlatformOptions=false;}} class="flex flex-row items-center text-2xl bg-white  rounded-xl p-2 border-1 border-gray-300" style="transform:scale(0.85)"><img class="w-1/4 px-2" src={platform.icon} alt=""><p class=" t {themeGradient} bg-clip-text text-transparent">{platform.platform}</p></button>
           {/each}
         </div>
         </div>
-
+      </div>
        
 
-        {#each Data as data}
-        <div class="w-1/2 mx-auto flex flex-row">
-          <pre class="text-2xl p-3">{data.markdown}</pre>
+        <br><br>
+
+        {#each Data as data,dataIndex}
+
+
+        <div class="w-2/3 mx-auto py-5">
+          <p class="{themeGradient} text-transparent bg-clip-text text-4xl text-left ">{dataIndex+1}. {data.title}</p>
+        </div>
+        <!-- markdown -->
+
+        <div class="w-2/3 mx-auto flex flex-row p-3 rounded-xl bg-white bg-opacity-70" style="box-shadow:2px 2px 4px 1px gray"> 
+          <p class="text-2xl px-4">{data.markdown}</p>
         </div>
 
+        <!-- code -->
+
+        <br>
 
          {#if data.terminal}
          <div class="w-1/2 rounded-xl  bg-opacity-80 mx-auto flex flex-col" style="background-color:#282c34;">
             
-              <div class="w-full px-5 text-xl pt-1 flex bg-gray-900 rounded-xl text-gray-300 flex-row justify-between items-center py-auto my-auto">
-                <pre class="text-3xl" style="cursor:pointer">⊡</pre>
-                <p class="text-center">Terminal</p>
-                <pre class="text-3xl" style="cursor:pointer">⊟ ⊠</pre>
+              <div class="w-full px-5 text-xl pt-1 flex bg-gray-900 rounded-xl text-gray-500 flex-row justify-between items-center py-auto my-auto">
+                <p class="text-3xl hover:text-green-500 transition-all duration-300" style="cursor:pointer">⊡</p>
+                <p class="text-center text-gray-300">Terminal</p>
+                <div class="flex flex-row gap-3">
+                  <p class="text-3xl hover:text-yellow-300 transition-all duration-300" style="cursor:pointer">⊟</p>
+                  <p class="text-3xl hover:text-red-600 transition-all duration-300" style="cursor:pointer">⊠</p>
+                </div>
               </div>
 
             <div class="w-full flex flex-row">
-                <div class="flex flex-col py-2">
+                <div class="flex flex-col py-3 px-3">
                   {#each data.code as line }
                   <pre><code class="language-" style="user-select:none;padding-right:0;margin-right:0">$</code></pre>
                   {/each}
                 </div>
 
-                <div class="relative w-full h-full py-2">
-                <button class="flex flex-row p-2 border-0 absolute text-gray-400 hover:text-white my-1" style="top:0%;right:0%"><pre>copy 📎</pre></button>
+                <div class="relative w-full h-full py-3">
+                <button class="flex flex-row p-2 border-0 absolute text-gray-400 hover:text-white my-1 text-base" style="top:0%;right:0%"><p>copy 📎</p></button>
                 {#each data.code as line}
-                <pre><code class="language- text-2xl">{line}</code></pre>
+                <pre><code class="language-bash text-2xl">{line}</code></pre>
                 {/each}
                   
                 </div>
@@ -145,7 +162,7 @@
           {:else}
 
           <div class="w-1/2 rounded-xl bg-black px-5 bg-opacity-80 mx-auto py-3 flex flex-col justify-around relative " style="min-height:3rem" >
-            <button class="flex flex-row p-2 border-0 absolute text-gray-400 hover:text-white my-1 " style="top:0%;right:0%"><pre>copy 📎</pre></button>
+            <button class="flex flex-row p-2 border-0 absolute text-gray-400 hover:text-white my-1 transition-all duration-300" style="top:0%;right:0%"><p>copy 📋</p></button>
            {#each data.code as line,index}
             <div>
               <pre><code class="language-js text-xl ">{line}</code></pre>
@@ -154,10 +171,21 @@
           </div>
           {/if}
        
+          <br>
+        <!-- output -->
+          
+        <div class="w-2/3 mx-auto py-5">
+          <p class="{themeGradient} text-transparent bg-clip-text text-2xl text-left ">Result : </p>
+        </div>
+      
+        <div class="w-1/2 mx-auto">
+          <img class="w-full rounded-xl" src={"./output-"+(dataIndex+1)+".png"} alt="output">
+        </div>
 
-        
-        <div class="w-1/2 mx-auto flex flex-row">
-          <pre class="text-2xl p-3" style="whitespace:nowrap">{data.output}</pre>
+        <br>
+
+        <div class="w-2/3 mx-auto flex flex-row p-3 rounded-xl bg-white bg-opacity-70" style="box-shadow:2px 2px 4px 1px gray"> 
+          <p class="text-2xl px-4">{data.output}</p>
         </div>
         
         {/each}
@@ -184,7 +212,16 @@
     .scrollShow{
       animation: fade-out ;
     } 
-
+    .showPlatformClass{
+      animation:scaleUp;
+    }
+    @keyframes scaleUp{
+      0%{opacity:0;transform:scaleY(0.0)}
+      25%{opacity:0.25;transform:scaleY(0.25)}
+      50%{opacity:0.5;transform:scaleY(0.5)}
+      75%{opacity:1;transform:scaleY(1)}
+     
+    }
     @keyframes fade-out{
       0%{opacity:0;transform:translateY(100%)}
       25%{opacity:0.25;transform:translateY(75%)}

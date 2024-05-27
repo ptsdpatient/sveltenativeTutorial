@@ -1,5 +1,6 @@
 interface DataType{
     terminal:Boolean;
+    title:string;
     markdown:string;
     code:string[];
     output:string;
@@ -7,13 +8,16 @@ interface DataType{
 
 export let Data:DataType[]=[
 {
-    markdown:'hello',
-    terminal:false,
+    title:'Installing nativescript',
+    markdown:"Lets start by installing nativescript using windows powershell, make sure you have nodejs and python installed and updated in your system properly as an old version of either of the runtimes can cause errors while installing. Its a long processess so it may take some minutes ",
+    terminal:true,
     code:[
-        'const tanishq = "Hello"',
-        'sudo apt install fuck you'
+        '//install nativescript and check status',
+        'npm install -g nativescript',
+        'ns'
     ],
-    output:'niga \n tanishq'    
+    output:'with this the installation of native script is completed',
+   
 },
 
 ]

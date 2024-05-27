@@ -59,7 +59,7 @@ pre[class*="language-"]::before {
 .language-css .token.string,
 .style .token.string,
 .token.variable {
-  color: #c4c4c4; /* Operator, entity, URL, CSS string, style string, variable */
+  color: #dadada; /* Operator, entity, URL, CSS string, style string, variable */
   background: #282c34;
 }
 
