@@ -104,7 +104,7 @@
         <p class="{themeGradient} px-5 bg-clip-text text-right text-transparent text-3xl">Platform : </p>
         <div class="w-1/3 relative rounded-xl  transition-all duration-300 ease-in-out">
         <button on:click={()=>showPlatformOptions=!showPlatformOptions} class="flex flex-row justify-between bg-white rounded-xl items-center border-1 border-gray-300"><div class="w-full flex flex-row items-center"><img class="w-1/3 px-2" src={currentPlatformImageURL} alt=""><p class="text-2xl {themeGradient} bg-clip-text text-transparent transition-all duration-300 ease-in-out">{currentPlatformName}</p></div><p class="text-2xl p-2 px-4 text-white {themeGradient} bg-clip-text text-transparent" >{showPlatformOptions?"⋏":"⋎"}</p></button>
-        <div  class="w-full {showPlatformOptions?"absolute my-1 ":"hidden"} z-10 mx-auto overflow-y-auto rounded-xl" >
+        <div class:showPlatformClass={showPlatformOptions} class="w-full {showPlatformOptions?"absolute my-1 ":"hidden"} z-10 mx-auto overflow-y-auto rounded-xl" >
           {#each platforms as platform}
           <button on:click={()=>{currentPlatformImageURL=platform.icon;currentPlatformName=platform.platform;showPlatformOptions=false;}} class="flex flex-row items-center text-2xl bg-white  rounded-xl p-2 border-1 border-gray-300" style="transform:scale(0.85)"><img class="w-1/4 px-2" src={platform.icon} alt=""><p class=" t {themeGradient} bg-clip-text text-transparent">{platform.platform}</p></button>
           {/each}
@@ -185,7 +185,9 @@
         <br>
 
         <div class="w-2/3 mx-auto flex flex-row p-3 rounded-xl bg-white bg-opacity-70" style="box-shadow:2px 2px 4px 1px gray"> 
-          <p class="text-2xl px-4">{data.output}</p>
+          <p class="text-2xl px-4">{data.output
+          
+          }</p>
         </div>
         
         {/each}
@@ -213,7 +215,8 @@
       animation: fade-out ;
     } 
     .showPlatformClass{
-      animation:scaleUp;
+      transform:scale(2.2);
+      transition:all 2s;
     }
     @keyframes scaleUp{
       0%{opacity:0;transform:scaleY(0.0)}
