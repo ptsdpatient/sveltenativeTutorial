@@ -53,12 +53,12 @@
 </script>
 
 <!-- loading -->
-<!-- <div class="{isLoading?"fixed":"hidden"}" style=";height:100vh;width:100vw;">
+<div class="{isLoading?"fixed":"hidden"}" style=";height:100vh;width:100vw;">
   <div class="{themeGradient} flex flex-col justify-center w-full h-full">
     <p style="place-items:center;" class="w-full text-center text-5xl px-4 py-2 rounded-xl font-bold text-gray-300">The Svelte Native Tutorial</p>
     <div class="w-1/2 mx-auto"><p class="text-xl text-right text-gray-300">by Tanishq Dhote</p></div>
   </div>
-</div> -->
+</div>
 
 <title>Home</title>
 
@@ -66,7 +66,9 @@
 <!-- header -->
 <div class="w-full h-full pattern bg-opacity-50">
 
+{#if !isLoading}
 <Header></Header>
+{/if}
 
 
   
