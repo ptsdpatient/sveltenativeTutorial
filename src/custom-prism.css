@@ -1,0 +1,93 @@
+/* Base styles */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #ececec; 
+  background: #282c3442; 
+  font-family: 'Fira Code', monospace;
+  padding:1px;
+  margin:1px;
+  text-shadow: none;
+}
+code[class*="language-"]::selection,
+pre[class*="language-"]::selection {
+  color:rgb(34, 34, 34);
+  background-color: #e4e4e4;
+}
+/* Line numbers */
+pre[class*="language-"]::before {
+  display: none; /* Hide default line numbers if any */
+}
+
+
+/* Token styles */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #5c6370; /* Comment color */
+}
+
+.token.punctuation {
+  color: #abb2bf; /* Punctuation color */
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #e06c75; /* Property, tags, constants, symbols, deleted */
+}
+
+.token.boolean,
+.token.number {
+  color: #d19a66; /* Boolean and number */
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #98c379; /* Selector, attribute name, string, character, builtin, inserted */
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: #c4c4c4; /* Operator, entity, URL, CSS string, style string, variable */
+  background: #282c34;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+  color: #61afef; /* At-rule, attribute value, function, class name */
+}
+
+.token.keyword {
+  color: #c678dd; /* Keyword */
+}
+
+.token.regex,
+.token.important {
+  color: #c678dd; /* Regex and important */
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
