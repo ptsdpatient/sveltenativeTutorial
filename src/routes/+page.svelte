@@ -70,11 +70,6 @@
 <Header></Header>
 {/if}
 
-
-  
-
-
-
 <!-- line skip -->
 <div class:scrollShow={showDIV} class="w-full h-full flex flex-col justify-around md:justify-center md:pt-10 md:gap-20" style="height:100vh">
   <div class="h-1/2 flex flex-col justify-start md:justify-center">
@@ -84,8 +79,8 @@
   </div>
 
 <div class="md:w-1/2 w-full h-1/4  mx-auto flex flex-col md:flex-row gap-5  text-4xl z-0">
-  <a href="setup" class="mx-auto transform hover:scale-95 transition-all duration-300 group"><button class="{themeGradient} group-hover:bg-clip-border md:bg-clip-text md:text-transparent px-4 py-2 border-0 rounded-2xl group-hover:text-white text-white group-hover:{themeGradient} transition-all duration-300 ease-in-out">Get Started </button> 🚀</a>
-  <a  href="svelte" class="mx-auto transform hover:scale-95 transition-all duration-300 group"><button class="{themeGradient} group-hover:bg-clip-border md:bg-clip-text md:text-transparent px-4 py-2 border-0 rounded-2xl group-hover:text-white text-white group-hover:{themeGradient} transition-all duration-300 ease-in-out">Learn Basics </button> 📖</a>
+  <a href="setup" class="mx-auto transform hover:scale-95 transition-all duration-400 group"><button class="{themeGradient}  group-hover:bg-clip-border md:bg-clip-text md:text-transparent px-4 py-2 border-0 rounded-2xl group-hover:text-white text-white group-hover:{themeGradient} transition-all duration-300 ease-in-out">Get Started </button> 🚀</a>
+  <a href="svelte" class="mx-auto transform hover:scale-95 transition-all duration-400 group"><button class="{themeGradient} group-hover:bg-clip-border md:bg-clip-text md:text-transparent px-4 py-2 border-0 rounded-2xl group-hover:text-white text-white group-hover:{themeGradient} transition-all duration-300 ease-in-out">Learn Basics </button> 📖</a>
 </div>
 
 </div>

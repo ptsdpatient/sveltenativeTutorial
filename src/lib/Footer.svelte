@@ -40,7 +40,6 @@
   </div>
   
   <br>
-  
   <br>
   
   <div class="w-full justify-between bg-gray-800 text-white text-2xl md:text-xl text-center py-2">A tutorial made by Tanishq</div>

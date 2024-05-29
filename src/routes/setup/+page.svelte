@@ -16,7 +16,7 @@
 
     let currentPlatformName='Windows'
     let currentPlatformImageURL='./windows.png'
-    let isLoading=true,showPlatformOptions=false;
+    let showPlatformOptions=false;
     let target=0
     let showDIV = false;
     let scrollPosition = 0;
@@ -47,9 +47,7 @@
     onMount(()=>{
       window.scrollTo(0,0)
       Prism.highlightAll();
-      setTimeout(()=>{
-        isLoading=false;
-      },2000)
+  
 
       window.addEventListener('scroll',handleScroll)
       return ()=>{
