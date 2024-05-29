@@ -3,6 +3,8 @@
     import {Data} from './windows'
     import {onMount} from 'svelte'
     import Prism from 'prismjs';
+    import Footer from "../../lib/Footer.svelte";
+
     import 'prismjs/themes/prism.css';
     import '../../../src/custom-prism.css';
 
@@ -60,8 +62,8 @@
 
 <title>Setup</title>
 
-<button on:click={()=>showOutput=false} class="w-full h-full fixed bg-black bg-opacity-70 z-30 overflow-x-auto {showOutput?"flex":"hidden"} ">
-  <div class="w-full flex flex-col justify-center"><img src={showOutputUrl} alt={showOutputUrl}></div>
+<button on:click={()=>showOutput=false} class="w-full h-full fixed  bg-black bg-opacity-70 z-30 overflow-x-auto {showOutput?"flex flex-col justify-center":"hidden"} ">
+  <img class="transform md:rotate-0 rotate-90 scale-150" src={showOutputUrl} alt={showOutputUrl}>
 </button>
 
 <div class="w-full h-full pattern">
@@ -109,14 +111,14 @@
         <p class="hiddenDiv md:text-5xl text-4xl px-5 font-bold md:px-20  md:text-center {themeGradient} bg-clip-text text-transparent  ">Lets get started!</p>
         <br><br>
         
-        <div class="w-full hiddenDiv md:w-1/2 flex flex-row justify-center gap-5 md:justify-center items-center mx-auto">
-        <p class="{themeGradient} md:px-3 bg-clip-text text-right text-transparent font-semibold text-3xl">Platform : </p>
+        <div class="w-full hiddenDiv md:w-1/2 flex flex-row justify-center gap-4 md:gap-5 md:justify-center items-center mx-auto">
+        <p class="{themeGradient} md:px-3 bg-clip-text text-right text-transparent font-semibold text-2xl md:text-3xl">Platform : </p>
         
         <div class="w-1/2 md:w-1/3  relative rounded-xl  transition-all duration-300 ease-in-out">
-        <button on:click={()=>showPlatformOptions=!showPlatformOptions} class="flex flex-row justify-between bg-white rounded-xl items-center hover:bg-opacity-50 hover:{themeGradient} group"><div class="w-full flex flex-row items-center"><img class="w-1/2 md:w-1/3 px-2" src={currentPlatformImageURL} alt=""><p class="text-2xl {themeGradient} group-hover:text-white group-hover:{themeGradient} bg-clip-text text-transparent transition-all duration-300 ease-in-out">{currentPlatformName}</p></div><p class="text-2xl p-2 px-4 {themeGradient} group-hover:text-white group-hover:{themeGradient} bg-clip-text text-transparent transition-all duration-300 transform group-hover:-rotate-180" >{showPlatformOptions?"⋏":"⋎"}</p></button>
+        <button on:click={()=>showPlatformOptions=!showPlatformOptions} class="flex flex-row justify-between bg-white rounded-xl items-center hover:bg-opacity-50 hover:{themeGradient} group"><div class="w-full flex flex-row items-center"><img class="w-1/3 p-2 md:p-0 md:w-1/3 md:px-2" src={currentPlatformImageURL} alt=""><p class="text-lg md:text-2xl {themeGradient} group-hover:text-white group-hover:{themeGradient} bg-clip-text text-transparent transition-all duration-300 ease-in-out">{currentPlatformName}</p></div><p class="text-lg md:text-2xl p-2 px-4 {themeGradient} group-hover:text-white group-hover:{themeGradient} bg-clip-text text-transparent transition-all duration-300 transform group-hover:-rotate-180" >{showPlatformOptions?"⋏":"⋎"}</p></button>
         <div class="w-full bg-white {showPlatformOptions?"absolute my-1":"hidden"} z-10 divide-y-2 divide-pink-200  group mx-auto overflow-y-auto rounded-xl" >
           {#each platforms as platform}
-          <button on:click={()=>{currentPlatformImageURL=platform.icon;currentPlatformName=platform.platform;showPlatformOptions=false;}} class="flex my-1 flex-row items-center text-2xl w-full  bg-white"><img class="w-1/4 md:w-1/4 px-2" src={platform.icon} alt=""><p class=" {themeGradient} bg-clip-text text-transparent ">{platform.platform}</p></button>
+          <button on:click={()=>{currentPlatformImageURL=platform.icon;currentPlatformName=platform.platform;showPlatformOptions=false;}} class="flex my-1 flex-row items-center text-lg md:text-2xl w-full transform hover:scale-95 transition-all duration-300 bg-white p-1"><img class="w-1/4 md:w-1/4 px-2" src={platform.icon} alt=""><p class=" {themeGradient} bg-clip-text text-transparent ">{platform.platform}</p></button>
           {/each}
         </div>
         </div>
@@ -201,9 +203,15 @@
         
         {/each}
         
-
     </div>
+
+
+    <Footer></Footer>
+
+    
 </div>
+
+
 
 <style>
     ::selection{
