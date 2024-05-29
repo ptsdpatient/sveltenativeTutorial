@@ -53,7 +53,7 @@
 </script>
 
 <!-- loading -->
-<div class="{isLoading?"fixed":"hidden"}" style=";height:100vh;width:100vw;">
+<div class="{isLoading?"fixed":"hidden"} z-20" style=";height:100vh;width:100vw;">
   <div class="{themeGradient} flex flex-col justify-center w-full h-full">
     <p style="place-items:center;" class="w-full text-center text-5xl px-4 py-2 rounded-xl font-bold text-gray-300">The Svelte Native Tutorial</p>
     <div class="w-1/2 mx-auto"><p class="text-xl text-right text-gray-300">by Tanishq Dhote</p></div>
@@ -83,7 +83,7 @@
     Are you looking for a tutorial to learn how to build mobile apps with Svelte? 📱✨ Well, look no further because this tutorial covers everything you need to know about mobile app development with Svelte Native! 🚀 📚</p>
   </div>
 
-<div class="md:w-1/2 w-full h-1/4  mx-auto flex flex-col md:flex-row gap-5  text-4xl">
+<div class="md:w-1/2 w-full h-1/4  mx-auto flex flex-col md:flex-row gap-5  text-4xl z-0">
   <a href="setup" class="mx-auto transform hover:scale-95 transition-all duration-300 group"><button class="{themeGradient} group-hover:bg-clip-border md:bg-clip-text md:text-transparent px-4 py-2 border-0 rounded-2xl group-hover:text-white text-white group-hover:{themeGradient} transition-all duration-300 ease-in-out">Get Started </button> 🚀</a>
   <a  href="svelte" class="mx-auto transform hover:scale-95 transition-all duration-300 group"><button class="{themeGradient} group-hover:bg-clip-border md:bg-clip-text md:text-transparent px-4 py-2 border-0 rounded-2xl group-hover:text-white text-white group-hover:{themeGradient} transition-all duration-300 ease-in-out">Learn Basics </button> 📖</a>
 </div>

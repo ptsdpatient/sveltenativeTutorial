@@ -18,8 +18,15 @@
     let target=0
     let showDIV = false;
     let scrollPosition = 0;
+    let showOutput=false
+    let showOutputUrl=''
 
-   
+    function imageDisplay(url){
+      showOutput=true;
+      showOutputUrl=url
+    }
+
+
     function handleScroll() {
       scrollPosition = window.scrollY;
       const element = document.querySelector('.hiddenDiv');
@@ -52,6 +59,10 @@
 </script>
 
 <title>Setup</title>
+
+<button on:click={()=>showOutput=false} class="w-full h-full fixed bg-black bg-opacity-70 z-30 overflow-x-auto {showOutput?"flex":"hidden"} ">
+  <div class="w-full flex flex-col justify-center"><img src={showOutputUrl} alt={showOutputUrl}></div>
+</button>
 
 <div class="w-full h-full pattern">
     <Header></Header>
@@ -98,7 +109,7 @@
         <p class="hiddenDiv md:text-5xl text-4xl px-5 font-bold md:px-20  md:text-center {themeGradient} bg-clip-text text-transparent  ">Lets get started!</p>
         <br><br>
         
-        <div class="w-full md:w-1/2 flex flex-row justify-center gap-5 md:justify-center items-center mx-auto">
+        <div class="w-full hiddenDiv md:w-1/2 flex flex-row justify-center gap-5 md:justify-center items-center mx-auto">
         <p class="{themeGradient} md:px-3 bg-clip-text text-right text-transparent font-semibold text-3xl">Platform : </p>
         
         <div class="w-1/2 md:w-1/3  relative rounded-xl  transition-all duration-300 ease-in-out">
@@ -118,13 +129,11 @@
         {#each Data as data,dataIndex}
 
 
-        <div class="w-2/3 mx-auto py-5">
-        </div>
         <!-- markdown -->
 
-        <div class="w-2/3 mx-auto flex flex-col p-4 rounded-xl bg-white bg-opacity-40 gap-2" style="box-shadow:2px 2px 4px 1px gray;"> 
+        <div class="w-11/12 hiddenDiv mx-auto px-2 md:w-2/3 flex flex-col p-4 rounded-xl bg-white bg-opacity-40 gap-2" style="box-shadow:2px 2px 4px 1px gray;"> 
           <p class="{themeGradient} px-4 py-1 text-transparent bg-clip-text text-3xl text-left font-bold">{dataIndex+1}. {data.title}</p>
-          <p class="text-2xl px-5">{data.markdown}</p>
+          <p class="text-xl md:text-2xl px-5">{data.markdown}</p>
         </div>
 
         <!-- code -->
@@ -132,28 +141,28 @@
         <br>
 
          {#if data.terminal}
-         <div class="w-1/2 rounded-xl  bg-opacity-80 mx-auto flex flex-col" style="background-color:#282c34;">
+         <div class="w-11/12 hiddenDiv md:w-1/2 rounded-xl  bg-opacity-80 mx-auto flex flex-col" style="background-color:#282c34;">
             
               <div class="w-full px-5 text-xl pt-1 flex bg-gray-900 rounded-xl text-gray-500 flex-row justify-between items-center py-auto my-auto">
                 <p class="text-3xl hover:text-green-500 transform hover:scale-90 transition-all duration-200" style="cursor:pointer">⊡</p>
                 <p class="text-center text-gray-300">Terminal</p>
-                <div class="flex flex-row gap-3  ">
+                <div class="flex flex-row gap-3">
                   <p class="text-3xl hover:text-yellow-300 transform hover:scale-90 transition-all duration-200" style="cursor:pointer">⊟</p>
                   <p class="text-3xl hover:text-red-600  transform hover:scale-90 transition-all duration-200" style="cursor:pointer">⊠</p>
                 </div>
               </div>
 
-            <div class="w-full flex flex-row">
+            <div class="w-full flex flex-row overflow-x-auto">
                 <div class="flex flex-col py-3 px-3">
                   {#each data.code as line }
                   <pre><code class="language-" style="user-select:none;padding-right:0;margin-right:0">$</code></pre>
                   {/each}
                 </div>
 
-                <div class="relative w-full h-full py-3">
-                <button class="flex flex-row p-2 px-3 border-0 mx-2 absolute text-gray-400 hover:text-white my-1 text-base hover:bg-gray-700 transform hover:scale-95 transition-all duration-300 rounded-xl" style="top:0%;right:0%"><pre>copy 📎</pre></button>
+                <div class="relative w-full h-full py-3 mr-5 md:mr-0">
+                <button class="hidden md:flex flex-row p-2 px-3 border-0 mx-2 absolute text-gray-400 hover:text-white my-1 hover:bg-gray-700 transform hover:scale-95 transition-all duration-300 rounded-xl" style="top:0%;right:0%;"><pre>copy 📎</pre></button>
                 {#each data.code as line}
-                <pre><code class="language-bash text-2xl">{line}</code></pre>
+                <pre style="overflow-x:hidden"><code class="language-bash" style="overflow-x:hidden">{line}</code></pre>
                 {/each}
                   
                 </div>
@@ -161,7 +170,7 @@
           </div>
           {:else}
 
-          <div class="w-1/2 rounded-xl bg-black px-5 bg-opacity-80 mx-auto py-3 flex flex-col justify-around relative " style="min-height:3rem" >
+          <div class="w-11/12 md:w-1/2 hiddenDiv rounded-xl bg-black px-5 bg-opacity-80 mx-auto py-3 flex flex-col justify-around relative " style="min-height:3rem" >
             <button class="flex flex-row p-2 border-0 absolute text-2xl text-gray-400 hover:text-white my-1 transition-all duration-300" style="top:0%;right:0%"><p>copy 📋</p></button>
            {#each data.code as line,index}
             <div>
@@ -176,14 +185,14 @@
           
   
 
-        <div class="w-2/3 mx-auto flex flex-row p-3 rounded-xl bg-white bg-opacity-40" style="box-shadow:2px 2px 4px 1px gray"> 
-          <pre class="{themeGradient} text-transparent bg-clip-text text-2xl text-left font-bold px-4">Result :</pre>
-          <p class="text-2xl px-2">{data.output}</p>
+        <div class="w-11/12 hiddenDiv md:w-2/3 mx-auto p-3 flex rounded-xl bg-white bg-opacity-40" style="box-shadow:2px 2px 4px 1px gray"> 
+         
+          <p class=" text-xl md:text-2xl px-2">  <button class="{themeGradient} text-transparent bg-clip-text text-2xl font-bold p-1">Result :</button> {data.output}</p>
         </div>
 
         <br>
-        <div class="w-1/2 mx-auto">
-          <img class="w-full rounded-xl" src={"./output-"+(dataIndex+1)+".png"} alt="output">
+        <div class="w-11/12 hiddenDiv md:w-1/2 mx-auto">
+          <button on:click={()=>imageDisplay("./output-"+(dataIndex+1)+".png")}><img class="w-full rounded-xl" src={"./output-"+(dataIndex+1)+".png"} alt="output"></button>
         </div>
 
         <br>
