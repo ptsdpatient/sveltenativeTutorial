@@ -3,12 +3,12 @@
     import icon from '../lib/images/favicon.png'
 
     let pagination =[
-    {name:'home',url:'./home.png',link:'',description:'navigate back to home page'},
-    {name:'basic setup',url:'./setup.png',link:'setup',description:'learn how to setup svelte native in your pc'},
-    {name:'svelte basics',url:'./svelte.png',link:'svelte',description:'learn the basic svelte concept'},
-    {name:'svelte native',url:'./svelte-native.png',link:'native',description:'learn svelte native tags and attribute'},
-    {name:'calculator app',url:'./calculator.png',link:'calculator',description:'create a calculator app in few lines of code'},
-    {name:'todo app',url:'./todo.png',link:'todo',description:'learn to make a todo list app'},
+    {name:'home',icon:' 🏠 ',url:'./home.png',link:'/',description:'navigate back to home page'},
+    {name:'basic setup',icon:' 🚀 ',url:'./setup.png',link:'setup',description:'learn how to setup svelte native in your pc'},
+    {name:'svelte basics',icon:' 💻 ',url:'./svelte.png',link:'svelte',description:'learn the basic svelte concept'},
+    {name:'svelte native',icon:' 📚 ',url:'./svelte-native.png',link:'native',description:'learn svelte native tags and attribute'},
+    {name:'calculator app',icon:' 🖩 ',url:'./calculator.png',link:'calculator',description:'create a calculator app in few lines of code'},
+    {name:'todo app',icon:'📋 ',url:'./todo.png',link:'todo',description:'learn to make a todo list app'},
     ]
     let mobileNav=false
     let themeButtonOn=false;
@@ -74,7 +74,7 @@
   <button class="w-full h-full flex flex-col bg-gray-200 py-10 {!mobileNav?"hidden":""} " style="height:100vh">
     <div class="w-full h-2/3 text-center md:hidden flex flex-col justify-around">
       {#each pagination as page}
-      <a class="w-2/3  my-auto mx-auto font-bold" href="{page.link}"><button on:click={()=>{mobileNav=false}}  class="{themeGradient}  text-2xl hover:bg-clip-border md:bg-clip-text md:text-transparent px-4 py-2 border-0 rounded-2xl hover:text-white text-white hover:{themeGradient} transition-all duration-300 ease-in-out">{"<"+page.name+"/>"}</button></a>
+      <a class="w-11/12  my-auto mx-auto font-bold" href="{page.link}"><button on:click={()=>{mobileNav=false}}  class="{themeGradient}  text-2xl hover:bg-clip-border md:bg-clip-text md:text-transparent px-4 py-2 border-0 rounded-2xl hover:text-white text-white hover:{themeGradient} transition-all duration-300 ease-in-out">{"<"+page.icon+page.name+"/>"}</button></a>
       {/each}    
     </div>
   </button>

@@ -63,7 +63,7 @@
 <title>Setup</title>
 
 <button on:click={()=>showOutput=false} class="w-full h-full fixed  bg-black bg-opacity-70 z-30 overflow-x-auto {showOutput?"flex flex-col justify-center":"hidden"} ">
-  <img class="transform md:rotate-0 rotate-90 scale-150" src={showOutputUrl} alt={showOutputUrl}>
+  <img class="transform md:rotate-0 rotate-90 md:scale-90 scale-150" src={showOutputUrl} alt={showOutputUrl}>
 </button>
 
 <div class="w-full h-full pattern">
@@ -189,18 +189,14 @@
 
         <div class="w-11/12 hiddenDiv md:w-2/3 mx-auto p-3 flex rounded-xl bg-white bg-opacity-40" style="box-shadow:2px 2px 4px 1px gray"> 
          
-          <p class=" text-xl md:text-2xl px-2">  <button class="{themeGradient} text-transparent bg-clip-text text-2xl font-bold p-1">Result :</button> {data.output}</p>
+          <p class=" text-xl md:text-2xl px-2">  <span class="{themeGradient} text-transparent bg-clip-text text-2xl font-bold p-1">Result :</span> {data.output}</p>
         </div>
 
         <br>
         <div class="w-11/12 hiddenDiv md:w-1/2 mx-auto">
           <button on:click={()=>imageDisplay("./output-"+(dataIndex+1)+".png")}><img class="w-full rounded-xl" src={"./output-"+(dataIndex+1)+".png"} alt="output"></button>
         </div>
-
         <br>
-
-        
-        
         {/each}
         
     </div>

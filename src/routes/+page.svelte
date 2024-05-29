@@ -136,10 +136,7 @@
 <div class="w-full hiddenDiv rounded-xl flex flex-col justify-center" style="height:40vh">
   <iframe class="md:w-1/3 w-full px-5 mx-auto h-2/3 my-auto md:h-full rounded-2xl" src="https://www.youtube.com/embed/gdemDxgHtcs?si=Dnlib2Rl6voUZCbB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
-<br>
-<br>
-<br>
-<p class="md:text-4xl hiddenDiv text-4xl text-center px-5 hiddenDiv font-bold md:px-20  {themeGradient} bg-clip-text text-transparent">Looking for support?</p>
+
 
 
 <Footer></Footer>

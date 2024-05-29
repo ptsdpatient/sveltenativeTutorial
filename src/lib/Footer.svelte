@@ -2,7 +2,8 @@
     let themeGradient='bg-gradient-to-r from-purple-600 to-pink-500'
 </script>
 
-
+<br><br>
+<p class="md:text-4xl hiddenDiv text-4xl text-center px-5 hiddenDiv font-bold md:px-20  {themeGradient} bg-clip-text text-transparent">Looking for support?</p>
 <br><br>
 <div class="w-3/4 px-2  md:w-full mx-auto flex flex-col md:flex-row gap-10 justify-around">
     <div class="w-full md:w-1/4 gap-2  rounded-xl flex flex-col justify-around p-2 ">
