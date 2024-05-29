@@ -49,15 +49,13 @@
         <p class="text-2xl p-2 px-5 font-bold {themeGradient} text-transparent bg-clip-text" style="white-space:nowrap">SN Tutorial</p>
       </button>
   
-  
-  
       <button on:click={()=>mobileNav=!mobileNav} class="md:hidden text-gray-300 w-1/6 px-4 py-2 rounded-2xl text-3xl hover:  hover:{themeGradient} hover:text-transparent hover:bg-clip-text transition duration-300 ease-in-out">
         ≕
       </button>
   
       <button on:mouseleave={()=>showNavIcon=false} class="hidden md:flex"><div class="tutorialNavigation md:w-full text-center hidden w-1/3  md:flex flex-col md:flex-row justify-around">
       {#each pagination as page}
-      <a class="" href="/{page.link}"><button on:mouseenter={()=>{showNavIcon=true;showNavData=page.name;showNavDescription=page.description;showNavImageURL=page.url}} class=" text-gray-300 px-4 py-2 rounded-2xl text-xl hover:  hover:{themeGradient} hover:text-transparent hover:bg-clip-text transition duration-300 ease-in-out">{page.name}</button></a>
+      <a class="" href="/{page.link}"><button on:mouseenter={()=>{showNavIcon=true;showNavData=page.name;showNavDescription=page.description;showNavImageURL=page.url}} class=" text-gray-300 px-4 py-2 text-xl hover:{themeGradient}  hover:bg-clip-text hover:text-transparent transition duration-300 ease-in-out">{page.name}</button></a>
       {/each}    
       </div>
       </button>
@@ -73,8 +71,8 @@
       <p class="w-full py-6 text-3xl text-white text-center">{showNavDescription}</p>
   </div>
   
-  <button class="w-full h-full flex flex-col bg-gray-800 py-10 {!mobileNav?"hidden":""} " style="height:100vh">
-    <div class="w-full h-1/2 text-center md:hidden flex flex-col justify-around">
+  <button class="w-full h-full flex flex-col bg-gray-200 py-10 {!mobileNav?"hidden":""} " style="height:100vh">
+    <div class="w-full h-2/3 text-center md:hidden flex flex-col justify-around">
       {#each pagination as page}
       <a class="w-2/3  my-auto mx-auto font-bold" href="{page.link}"><button on:click={()=>{mobileNav=false}}  class="{themeGradient}  text-2xl hover:bg-clip-border md:bg-clip-text md:text-transparent px-4 py-2 border-0 rounded-2xl hover:text-white text-white hover:{themeGradient} transition-all duration-300 ease-in-out">{"<"+page.name+"/>"}</button></a>
       {/each}    

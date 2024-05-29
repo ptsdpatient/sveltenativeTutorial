@@ -84,8 +84,8 @@
   </div>
 
 <div class="md:w-1/2 w-full h-1/4  mx-auto flex flex-col md:flex-row gap-5  text-4xl">
-  <a href="setup" class="mx-auto"><button class="{themeGradient} hover:bg-clip-border md:bg-clip-text md:text-transparent px-4 py-2 border-0 rounded-2xl hover:text-white text-white hover:{themeGradient} transition-all duration-300 ease-in-out">Get Started </button> 🚀</a>
-  <a  href="svelte" class="mx-auto"><button class="{themeGradient} hover:bg-clip-border md:bg-clip-text md:text-transparent px-4 py-2 border-0  rounded-2xl hover:text-white text-white hover:{themeGradient} transition-all duration-300 ease-in-out">Learn Basics </button> 📖</a>
+  <a href="setup" class="mx-auto transform hover:scale-95 transition-all duration-300 group"><button class="{themeGradient} group-hover:bg-clip-border md:bg-clip-text md:text-transparent px-4 py-2 border-0 rounded-2xl group-hover:text-white text-white group-hover:{themeGradient} transition-all duration-300 ease-in-out">Get Started </button> 🚀</a>
+  <a  href="svelte" class="mx-auto transform hover:scale-95 transition-all duration-300 group"><button class="{themeGradient} group-hover:bg-clip-border md:bg-clip-text md:text-transparent px-4 py-2 border-0 rounded-2xl group-hover:text-white text-white group-hover:{themeGradient} transition-all duration-300 ease-in-out">Learn Basics </button> 📖</a>
 </div>
 
 </div>
@@ -133,8 +133,8 @@
 <br>
 <p class=" md:px-20 hiddenDiv px-5  md:text-left text-2xl">Svelte is very easy to understand  and if you are new to svelte this tutorial has a page dedicated to explain the basics of svelte here <a href="/basics" class="{themeGradient} bg-clip-text text-transparent rounded-2xl hover:underline">Svelte Basics</a> , Svelte also gets a lot of criticism on the internet for being relatively new to the market, its magical abilities because of compile time features and not being in demand in the job market.</p>
 <br>
-<div class="w-full hiddenDiv" style="height:40vh">
-  <iframe class="w-1/3 mx-auto h-full rounded-2xl" src="https://www.youtube.com/embed/gdemDxgHtcs?si=Dnlib2Rl6voUZCbB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div class="w-full hiddenDiv rounded-xl flex flex-col justify-center" style="height:40vh">
+  <iframe class="md:w-1/3 w-full px-5 mx-auto h-2/3 my-auto md:h-full rounded-2xl" src="https://www.youtube.com/embed/gdemDxgHtcs?si=Dnlib2Rl6voUZCbB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 <br>
 <br>

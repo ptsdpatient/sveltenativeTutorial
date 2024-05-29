@@ -53,43 +53,41 @@
 
 <title>Setup</title>
 
-
 <div class="w-full h-full pattern">
     <Header></Header>
     <div class="">
-        <br><br>
-        <div class="w-full scrollShow pt-5 flex flex-row justify-center md:text-5xl text-3xl px-5 gap-3 md:px-20"><p class="  font-bold {themeGradient} bg-clip-text text-transparent">Welcome to the Svelte Native Setup Tutorial</p>🚀</div>
+        <br><br><br>
+        <div class="w-full scrollShow py-1 flex flex-row justify-center md:text-5xl text-4xl px-5 md:gap-3 md:px-20"><p class="  font-bold {themeGradient} bg-clip-text text-transparent">Welcome to the Svelte Native Setup Tutorial</p>🚀</div>
         <br>
 
         <p class=" md:px-20 scrollShow px-5  md:text-left text-2xl">Lets start with seting up the necessary tools and utilities we need to get started with native script development, it typically includes a text editor like <a href="https://code.visualstudio.com/" class="{themeGradient} bg-clip-text text-transparent rounded-2xl hover:underline">visual studio code</a>, a <a href="https://ubuntu.com/desktop/wsl" class="{themeGradient} bg-clip-text text-transparent rounded-2xl hover:underline">terminal</a> to run tasks along with <a href="https://nodejs.org/" class="{themeGradient} bg-clip-text text-transparent rounded-2xl hover:underline">nodejs</a> and <a href="https://www.python.org/" class="{themeGradient} bg-clip-text text-transparent rounded-2xl hover:underline">python</a> for runtime and installation. In case if you find video tutorials better I recommend you watch these videos.</p>        
         
-        <br>
 
-        <div class="w-full scrollShow flex pt-5 flex-row justify-center gap-20 " style="height:40vh">
-          <iframe class="w-1/4  h-full rounded-2xl" src="https://www.youtube.com/embed/hTWGWPG3aWQ?si=3R_-fjlMC2T-MZ2L" title="Svelte Native installation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          <iframe class="w-1/4  h-full rounded-2xl" src="https://www.youtube.com/embed/jyDdEI1Vvd4?si=raxObGO8IsPsEhua" title="Svelte Native installation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="w-full scrollShow flex pt-5 flex-col md:flex-row justify-center gap-5 md:h-52 h-96">
+          <iframe class="w-full px-10 md:w-1/3 h-1/2 md:h-full rounded-2xl transform hover:scale-95 transition-all duration-300" src="https://www.youtube.com/embed/hTWGWPG3aWQ?si=3R_-fjlMC2T-MZ2L" title="Svelte Native installation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe class="w-full px-10 md:w-1/3 h-1/2 md:h-full rounded-2xl transform hover:scale-95 transition-all duration-300" src="https://www.youtube.com/embed/jyDdEI1Vvd4?si=raxObGO8IsPsEhua" title="Svelte Native installation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
 
         <br><br>
 
-        <p class="hiddenDiv md:text-4xl text-3xl px-5 font-bold md:px-20  md:text-left {themeGradient} bg-clip-text text-transparent  ">Mobile setup : </p>
+        <p class="hiddenDiv md:text-4xl text-4xl px-5 font-bold md:px-20  md:text-left {themeGradient} bg-clip-text text-transparent  ">Mobile setup : </p>
         
         <br>
         <p class=" md:px-20 px-5 hiddenDiv md:text-left text-2xl">Since you are starting with android app development by using a desktop you need to download <a href="https://preview.nativescript.org" class="{themeGradient} bg-clip-text text-transparent rounded-2xl hover:underline">Native Preview</a> app developed by the native script team to run the native script app on android/ ios in development environment</p>        
         <br>
-        <div class="w-2/3 px-10 hiddenDiv mx-auto flex flex-row justify-around">
-            <a href="https://play.google.com/store/apps/details?id=org.nativescript.preview.android" class="w-1/3 h-full"><img class="w-full h-full" src="./playstore.png" alt="playstore"></a>
-            <a href="https://apps.apple.com/us/app/nativescript-preview/id1264484702" class="w-1/3 h-full"><img class="w-full h-full"  src="./applestore.png" alt="playstore"></a>
+        <div class="w-3/4 md:w-2/3 px-7 hiddenDiv mx-auto flex flex-col md:flex-row justify-around gap-5 group items-center">
+            <a href="https://play.google.com/store/apps/details?id=org.nativescript.preview.android" class="w-full md:w-1/3 h-full transform hover:scale-95 transition-all duration-300"><img class="w-full h-full hover:scale-90" src="./playstore.png" alt="playstore"></a>
+            <a href="https://apps.apple.com/us/app/nativescript-preview/id1264484702" class="w-full md:w-1/3 h-full  hover:scale-80 transform hover:scale-95 transition-all duration-300"><img class="w-full h-full"  src="./applestore.png" alt="playstore"></a>
         </div>
+
         <br>
         <br>
-        <div class="w-2/3 gap-2 mx-auto hiddenDiv flex flex-row justify-around text-8xl items-center">
+        <div class="w-full px-4 md:w-2/3 gap-1 md:gap-2 mx-auto hiddenDiv flex flex-row justify-around text-4xl md:text-8xl items-center">
           <img class="w-4/12 hiddenDiv" src="./shellQR.png" alt="">
           <p class=" md:text-left hiddenDiv {themeGradient} bg-clip-text text-transparent  ">+</p>
           <img class="w-3/12 hiddenDiv" src="./scanQR.png" alt="">
           <p class=" md:text-left hiddenDiv {themeGradient} bg-clip-text text-transparent  ">=</p>
           <img  class="w-3/12 hiddenDiv" src="./android.png" alt="">
-          <p class="hiddenDiv">😻</p>
         </div>
          <br>
          <br>
@@ -97,21 +95,23 @@
 
 
         
-        <p class="hiddenDiv md:text-5xl text-3xl px-5 font-bold md:px-20  md:text-center {themeGradient} bg-clip-text text-transparent  ">Lets get started!</p>
+        <p class="hiddenDiv md:text-5xl text-4xl px-5 font-bold md:px-20  md:text-center {themeGradient} bg-clip-text text-transparent  ">Lets get started!</p>
         <br><br>
         
-        <div class="w-1/2 flex flex-row justify-center items-center mx-auto">
-        <p class="{themeGradient} px-5 bg-clip-text text-right text-transparent text-3xl">Platform : </p>
-        <div class="w-1/3 relative rounded-xl  transition-all duration-300 ease-in-out">
-        <button on:click={()=>showPlatformOptions=!showPlatformOptions} class="flex flex-row justify-between bg-white rounded-xl items-center border-1 border-gray-300"><div class="w-full flex flex-row items-center"><img class="w-1/3 px-2" src={currentPlatformImageURL} alt=""><p class="text-2xl {themeGradient} bg-clip-text text-transparent transition-all duration-300 ease-in-out">{currentPlatformName}</p></div><p class="text-2xl p-2 px-4 text-white {themeGradient} bg-clip-text text-transparent" >{showPlatformOptions?"⋏":"⋎"}</p></button>
-        <div class:showPlatformClass={showPlatformOptions} class="w-full {showPlatformOptions?"absolute my-1 ":"hidden"} z-10 mx-auto overflow-y-auto rounded-xl" >
+        <div class="w-full md:w-1/2 flex flex-row justify-center gap-5 md:justify-center items-center mx-auto">
+        <p class="{themeGradient} md:px-3 bg-clip-text text-right text-transparent font-semibold text-3xl">Platform : </p>
+        
+        <div class="w-1/2 md:w-1/3  relative rounded-xl  transition-all duration-300 ease-in-out">
+        <button on:click={()=>showPlatformOptions=!showPlatformOptions} class="flex flex-row justify-between bg-white rounded-xl items-center hover:bg-opacity-50 hover:{themeGradient} group"><div class="w-full flex flex-row items-center"><img class="w-1/2 md:w-1/3 px-2" src={currentPlatformImageURL} alt=""><p class="text-2xl {themeGradient} group-hover:text-white group-hover:{themeGradient} bg-clip-text text-transparent transition-all duration-300 ease-in-out">{currentPlatformName}</p></div><p class="text-2xl p-2 px-4 {themeGradient} group-hover:text-white group-hover:{themeGradient} bg-clip-text text-transparent transition-all duration-300 transform group-hover:-rotate-180" >{showPlatformOptions?"⋏":"⋎"}</p></button>
+        <div class="w-full bg-white {showPlatformOptions?"absolute my-1":"hidden"} z-10 divide-y-2 divide-pink-200  group mx-auto overflow-y-auto rounded-xl" >
           {#each platforms as platform}
-          <button on:click={()=>{currentPlatformImageURL=platform.icon;currentPlatformName=platform.platform;showPlatformOptions=false;}} class="flex flex-row items-center text-2xl bg-white  rounded-xl p-2 border-1 border-gray-300" style="transform:scale(0.85)"><img class="w-1/4 px-2" src={platform.icon} alt=""><p class=" t {themeGradient} bg-clip-text text-transparent">{platform.platform}</p></button>
+          <button on:click={()=>{currentPlatformImageURL=platform.icon;currentPlatformName=platform.platform;showPlatformOptions=false;}} class="flex my-1 flex-row items-center text-2xl w-full  bg-white"><img class="w-1/4 md:w-1/4 px-2" src={platform.icon} alt=""><p class=" {themeGradient} bg-clip-text text-transparent ">{platform.platform}</p></button>
           {/each}
         </div>
         </div>
       </div>
-       
+      
+    
 
         <br><br>
 
@@ -119,12 +119,12 @@
 
 
         <div class="w-2/3 mx-auto py-5">
-          <p class="{themeGradient} text-transparent bg-clip-text text-4xl text-left ">{dataIndex+1}. {data.title}</p>
         </div>
         <!-- markdown -->
 
-        <div class="w-2/3 mx-auto flex flex-row p-3 rounded-xl bg-white bg-opacity-70" style="box-shadow:2px 2px 4px 1px gray"> 
-          <p class="text-2xl px-4">{data.markdown}</p>
+        <div class="w-2/3 mx-auto flex flex-col p-4 rounded-xl bg-white bg-opacity-40 gap-2" style="box-shadow:2px 2px 4px 1px gray;"> 
+          <p class="{themeGradient} px-4 py-1 text-transparent bg-clip-text text-3xl text-left font-bold">{dataIndex+1}. {data.title}</p>
+          <p class="text-2xl px-5">{data.markdown}</p>
         </div>
 
         <!-- code -->
@@ -135,11 +135,11 @@
          <div class="w-1/2 rounded-xl  bg-opacity-80 mx-auto flex flex-col" style="background-color:#282c34;">
             
               <div class="w-full px-5 text-xl pt-1 flex bg-gray-900 rounded-xl text-gray-500 flex-row justify-between items-center py-auto my-auto">
-                <p class="text-3xl hover:text-green-500 transition-all duration-300" style="cursor:pointer">⊡</p>
+                <p class="text-3xl hover:text-green-500 transform hover:scale-90 transition-all duration-200" style="cursor:pointer">⊡</p>
                 <p class="text-center text-gray-300">Terminal</p>
-                <div class="flex flex-row gap-3">
-                  <p class="text-3xl hover:text-yellow-300 transition-all duration-300" style="cursor:pointer">⊟</p>
-                  <p class="text-3xl hover:text-red-600 transition-all duration-300" style="cursor:pointer">⊠</p>
+                <div class="flex flex-row gap-3  ">
+                  <p class="text-3xl hover:text-yellow-300 transform hover:scale-90 transition-all duration-200" style="cursor:pointer">⊟</p>
+                  <p class="text-3xl hover:text-red-600  transform hover:scale-90 transition-all duration-200" style="cursor:pointer">⊠</p>
                 </div>
               </div>
 
@@ -151,7 +151,7 @@
                 </div>
 
                 <div class="relative w-full h-full py-3">
-                <button class="flex flex-row p-2 border-0 absolute text-gray-400 hover:text-white my-1 text-base" style="top:0%;right:0%"><p>copy 📎</p></button>
+                <button class="flex flex-row p-2 px-3 border-0 mx-2 absolute text-gray-400 hover:text-white my-1 text-base hover:bg-gray-700 transform hover:scale-95 transition-all duration-300 rounded-xl" style="top:0%;right:0%"><pre>copy 📎</pre></button>
                 {#each data.code as line}
                 <pre><code class="language-bash text-2xl">{line}</code></pre>
                 {/each}
@@ -162,7 +162,7 @@
           {:else}
 
           <div class="w-1/2 rounded-xl bg-black px-5 bg-opacity-80 mx-auto py-3 flex flex-col justify-around relative " style="min-height:3rem" >
-            <button class="flex flex-row p-2 border-0 absolute text-gray-400 hover:text-white my-1 transition-all duration-300" style="top:0%;right:0%"><p>copy 📋</p></button>
+            <button class="flex flex-row p-2 border-0 absolute text-2xl text-gray-400 hover:text-white my-1 transition-all duration-300" style="top:0%;right:0%"><p>copy 📋</p></button>
            {#each data.code as line,index}
             <div>
               <pre><code class="language-js text-xl ">{line}</code></pre>
@@ -174,21 +174,21 @@
           <br>
         <!-- output -->
           
-        <div class="w-2/3 mx-auto py-5">
-          <p class="{themeGradient} text-transparent bg-clip-text text-2xl text-left ">Result : </p>
+  
+
+        <div class="w-2/3 mx-auto flex flex-row p-3 rounded-xl bg-white bg-opacity-40" style="box-shadow:2px 2px 4px 1px gray"> 
+          <pre class="{themeGradient} text-transparent bg-clip-text text-2xl text-left font-bold px-4">Result :</pre>
+          <p class="text-2xl px-2">{data.output}</p>
         </div>
-      
+
+        <br>
         <div class="w-1/2 mx-auto">
           <img class="w-full rounded-xl" src={"./output-"+(dataIndex+1)+".png"} alt="output">
         </div>
 
         <br>
 
-        <div class="w-2/3 mx-auto flex flex-row p-3 rounded-xl bg-white bg-opacity-70" style="box-shadow:2px 2px 4px 1px gray"> 
-          <p class="text-2xl px-4">{data.output
-          
-          }</p>
-        </div>
+        
         
         {/each}
         

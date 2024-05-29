@@ -4,6 +4,7 @@ interface DataType{
     markdown:string;
     code:string[];
     output:string;
+    conclusion:string;
 }
 
 export let Data:DataType[]=[
@@ -16,8 +17,8 @@ export let Data:DataType[]=[
         'npm install -g nativescript',
         'ns'
     ],
-    output:'with this the installation of native script is completed',
-   
+    output:'the template will install nativescript and display status of the nativescript after installation',
+    conclusion:'with this the installation of native script is completed, there are a few occuring errors where the installation gives error while installing for IOS'
 },
 
 ]
