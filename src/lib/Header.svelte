@@ -46,7 +46,7 @@
   <div class="flex flex-row w-full justify-between bg-gray-800">
   
       <button>
-        <p class="text-2xl p-2 px-5 font-bold {themeGradient} text-transparent bg-clip-text" style="white-space:nowrap">SN Tutorial</p>
+        <p class="text-2xl p-2 px-5 font-bold {themeGradient} text-transparent bg-clip-text" style="white-space:nowrap;">SN Tutorial</p>
       </button>
   
       <button on:click={()=>mobileNav=!mobileNav} class="md:hidden text-gray-300 w-1/6 px-4 py-2 rounded-2xl text-3xl hover:  hover:{themeGradient} hover:text-transparent hover:bg-clip-text transition duration-300 ease-in-out">
@@ -63,7 +63,7 @@
 
   </div>
   
-  <div class="bg-black bg-opacity-80 w-full hidden  flex-col justify-center {showNavIcon?"md:flex":"hidden"}" style="height:100vh;">
+  <div class="bg-black bg-opacity-80 w-full hidden flex-col justify-center {showNavIcon?"md:flex scaleAnim":"hidden"}" style="height:100vh;">
       <div class="w-full flex flex-row justify-center"><img class="w-1/6 p-6" src={showNavImageURL} alt={showNavData}></div>
         <div class="w-full flex flex-row justify-center">
         <button class="text-4xl text-white rounded-2xl px-4 py-2 {themeGradient}"> {"<"+showNavData+"/>"}</button>
@@ -71,7 +71,7 @@
       <p class="w-full py-6 text-3xl text-white text-center">{showNavDescription}</p>
   </div>
   
-  <button class="w-full h-full flex flex-col bg-gray-200 py-10 {!mobileNav?"hidden":""} " style="height:100vh">
+  <button class="w-full h-full flex flex-col bg-gray-100 bg-opacity-90 py-10 {!mobileNav?"hidden ":"scaleAnim"} " style="height:100svh">
     <div class="w-full h-2/3 text-center md:hidden flex flex-col justify-around">
       {#each pagination as page}
       <a class="w-11/12  my-auto mx-auto font-bold" href="/{page.link}"><button on:click={()=>{mobileNav=false}}  class="{themeGradient}  text-2xl hover:bg-clip-border md:bg-clip-text md:text-transparent px-4 py-2 border-0 rounded-2xl hover:text-white text-white hover:{themeGradient} transition-all duration-300 ease-in-out">{"<"+page.icon+page.name+"/>"}</button></a>
@@ -82,16 +82,11 @@
 
 
 <style>
-    .slideHeader{
-      animation: slide 0.3s ease-in-out;
-    }
-    @keyframes slide{
-      0%{transform: translateY(-25px);}
-      25%{transform: translateY(-13px);}
-      50%{transform: translateY(-8px);}
-      75%{transform: translateY(-3px);}
-      100%{transform: translateY(-0px);}
-    }
+
+
+   
+
+  
 </style>
 
   

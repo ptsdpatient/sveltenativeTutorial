@@ -32,6 +32,7 @@
     function handleScroll() {
       scrollPosition = window.scrollY;
       const element = document.querySelector('.hiddenDiv');
+      if(element){
       if(!element.classList.contains("scrollShow")){
       const rect = element.getBoundingClientRect();
       target = rect.bottom+scrollPosition-window.innerHeight-rect.height/2;
@@ -39,8 +40,9 @@
         element.classList.add("scrollShow")
         element.classList.remove("hiddenDiv")
         showDIV=true
+          }
+        }
       }
-    }
     }
 
 
@@ -60,7 +62,7 @@
 
 <title>Setup</title>
 
-<button on:click={()=>showOutput=false} class="w-full h-full fixed  bg-black bg-opacity-70 z-30 overflow-x-auto {showOutput?"flex flex-col justify-center":"hidden"} ">
+<button on:click={()=>showOutput=false} class="w-full h-full fixed  bg-black bg-opacity-70 z-30 overflow-x-auto {showOutput?"flex flex-col scaleAnim justify-center":"hidden"} ">
   <img class="transform md:rotate-0 rotate-90 md:scale-90 scale-150" src={showOutputUrl} alt={showOutputUrl}>
 </button>
 
@@ -74,9 +76,9 @@
         <p class=" md:px-20 scrollShow px-5  md:text-left text-2xl">Lets start with seting up the necessary tools and utilities we need to get started with native script development, it typically includes a text editor like <a href="https://code.visualstudio.com/" class="{themeGradient} bg-clip-text text-transparent rounded-2xl hover:underline">visual studio code</a>, a <a href="https://ubuntu.com/desktop/wsl" class="{themeGradient} bg-clip-text text-transparent rounded-2xl hover:underline">terminal</a> to run tasks along with <a href="https://nodejs.org/" class="{themeGradient} bg-clip-text text-transparent rounded-2xl hover:underline">nodejs</a> and <a href="https://www.python.org/" class="{themeGradient} bg-clip-text text-transparent rounded-2xl hover:underline">python</a> for runtime and installation. In case if you find video tutorials better I recommend you watch these videos.</p>        
         
 
-        <div class="w-full scrollShow flex pt-5 flex-col md:flex-row justify-center gap-5 md:h-52 h-96">
-          <iframe class="w-full px-10 md:w-1/3 h-1/2 md:h-full rounded-2xl transform hover:scale-95 transition-all duration-300" src="https://www.youtube.com/embed/hTWGWPG3aWQ?si=3R_-fjlMC2T-MZ2L" title="Svelte Native installation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          <iframe class="w-full px-10 md:w-1/3 h-1/2 md:h-full rounded-2xl transform hover:scale-95 transition-all duration-300" src="https://www.youtube.com/embed/jyDdEI1Vvd4?si=raxObGO8IsPsEhua" title="Svelte Native installation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="w-full scrollShow flex pt-5 flex-col md:flex-row justify-center gap-20 md:h-52 h-96">
+          <iframe class="w-full md:w-1/4 h-1/2 md:h-full rounded-2xl transform hover:scale-95 transition-all duration-300 hover:shadow-xl" src="https://www.youtube.com/embed/hTWGWPG3aWQ?si=3R_-fjlMC2T-MZ2L" title="Svelte Native installation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe class="w-full md:w-1/4 h-1/2 md:h-full rounded-2xl transform hover:scale-95 transition-all duration-300 hover:shadow-xl" src="https://www.youtube.com/embed/jyDdEI1Vvd4?si=raxObGO8IsPsEhua" title="Svelte Native installation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
 
         <br><br>
@@ -87,18 +89,18 @@
         <p class=" md:px-20 px-5 hiddenDiv md:text-left text-2xl">Since you are starting with android app development by using a desktop you need to download <a href="https://preview.nativescript.org" class="{themeGradient} bg-clip-text text-transparent rounded-2xl hover:underline">Native Preview</a> app developed by the native script team to run the native script app on android/ ios in development environment</p>        
         <br>
         <div class="w-3/4 md:w-2/3 px-7 hiddenDiv mx-auto flex flex-col md:flex-row justify-around gap-5 group items-center">
-            <a href="https://play.google.com/store/apps/details?id=org.nativescript.preview.android" class="w-full md:w-1/3 h-full transform hover:scale-95 transition-all duration-300"><img class="w-full h-full hover:scale-90" src="./playstore.png" alt="playstore"></a>
-            <a href="https://apps.apple.com/us/app/nativescript-preview/id1264484702" class="w-full md:w-1/3 h-full  hover:scale-80 transform hover:scale-95 transition-all duration-300"><img class="w-full h-full"  src="./applestore.png" alt="playstore"></a>
+            <a href="https://play.google.com/store/apps/details?id=org.nativescript.preview.android" class="w-full md:w-1/3 h-full transform hover:scale-95 transition-all duration-300  hover:shadow-xl"><img class="w-full h-full hover:scale-90" src="./playstore.png" alt="playstore"></a>
+            <a href="https://apps.apple.com/us/app/nativescript-preview/id1264484702" class="w-full md:w-1/3 h-full hover:scale-80 transform hover:scale-95 transition-all duration-300  hover:shadow-xl" ><img class="w-full h-full"  src="./applestore.png" alt="playstore"></a>
         </div>
 
         <br>
         <br>
         <div class="w-full px-4 md:w-2/3 gap-1 md:gap-2 mx-auto hiddenDiv flex flex-row justify-around text-4xl md:text-8xl items-center">
-          <img class="w-4/12 hiddenDiv" src="./shellQR.png" alt="">
-          <p class=" md:text-left hiddenDiv {themeGradient} bg-clip-text text-transparent  ">+</p>
-          <img class="w-3/12 hiddenDiv" src="./scanQR.png" alt="">
-          <p class=" md:text-left hiddenDiv {themeGradient} bg-clip-text text-transparent  ">=</p>
-          <img  class="w-3/12 hiddenDiv" src="./android.png" alt="">
+          <img class="w-4/12 " src="./shellQR.png" alt="">
+          <p class=" md:text-left  {themeGradient} bg-clip-text text-transparent  ">+</p>
+          <img class="w-3/12 " src="./scanQR.png" alt="">
+          <p class=" md:text-left  {themeGradient} bg-clip-text text-transparent  ">=</p>
+          <img  class="w-3/12 " src="./android.png" alt="">
         </div>
          <br>
          <br>
@@ -113,7 +115,7 @@
         <p class="{themeGradient} md:px-3 bg-clip-text text-right text-transparent font-semibold text-2xl md:text-3xl">Platform : </p>
         
         <div class="w-1/2 md:w-1/3  relative rounded-xl  transition-all duration-300 ease-in-out">
-        <button on:click={()=>showPlatformOptions=!showPlatformOptions} class="flex flex-row justify-between bg-white rounded-xl items-center hover:bg-opacity-50 hover:{themeGradient} group"><div class="w-full flex flex-row items-center"><img class="w-1/3 p-2 md:p-0 md:w-1/3 md:px-2" src={currentPlatformImageURL} alt=""><p class="text-lg md:text-2xl {themeGradient} group-hover:text-white group-hover:{themeGradient} bg-clip-text text-transparent transition-all duration-300 ease-in-out">{currentPlatformName}</p></div><p class="text-lg md:text-2xl p-2 px-4 {themeGradient} group-hover:text-white group-hover:{themeGradient} bg-clip-text text-transparent transition-all duration-300 transform group-hover:-rotate-180" >{showPlatformOptions?"⋏":"⋎"}</p></button>
+        <button on:click={()=>showPlatformOptions=!showPlatformOptions} class="flex flex-row justify-between bg-white rounded-xl items-center hover:bg-opacity-50 hover:{themeGradient} group  transform hover:scale-95 hover:shadow-xl transition-all duration-300 ease-in-out"><div class="w-full flex flex-row items-center"><img class="w-1/3 p-2 md:p-0 md:w-1/3 md:px-2" src={currentPlatformImageURL} alt=""><p class="text-lg md:text-2xl {themeGradient} group-hover:text-white group-hover:{themeGradient} bg-clip-text text-transparent transition-all duration-300 ease-in-out">{currentPlatformName}</p></div><p class="text-lg md:text-2xl p-2 px-4 {themeGradient} group-hover:text-white group-hover:{themeGradient} bg-clip-text text-transparent transition-all duration-300 transform group-hover:-rotate-180" >{showPlatformOptions?"⋏":"⋎"}</p></button>
         <div class="w-full bg-white {showPlatformOptions?"absolute my-1":"hidden"} z-10 divide-y-2 divide-pink-200  group mx-auto overflow-y-auto rounded-xl" >
           {#each platforms as platform}
           <button on:click={()=>{currentPlatformImageURL=platform.icon;currentPlatformName=platform.platform;showPlatformOptions=false;}} class="flex my-1 flex-row items-center text-lg md:text-2xl w-full transform hover:scale-95 transition-all duration-300 bg-white p-1"><img class="w-1/4 md:w-1/4 px-2" src={platform.icon} alt=""><p class=" {themeGradient} bg-clip-text text-transparent ">{platform.platform}</p></button>
@@ -191,8 +193,8 @@
         </div>
 
         <br>
-        <div class="w-11/12 hiddenDiv md:w-1/2 mx-auto">
-          <button on:click={()=>imageDisplay("./output-"+(dataIndex+1)+".png")}><img class="w-full rounded-xl" src={"./output-"+(dataIndex+1)+".png"} alt="output"></button>
+        <div class="w-11/12 hiddenDiv md:w-1/2 mx-auto ">
+          <button on:click={()=>imageDisplay("./output-"+(dataIndex+1)+".png")}><img class="w-full rounded-xl hover:scale-95 transform transition-all duration-300 hover:shadow-2xl" src={"./output-"+(dataIndex+1)+".png"} alt="output"></button>
         </div>
         <br>
         {/each}
@@ -222,20 +224,16 @@
       opacity:0;
       transform:translateY(50%);
     }
-    .scrollShow{
-      animation: fade-out ;
-    } 
+   
     .showPlatformClass{
       transform:scale(2.2);
       transition:all 2s;
     }
-    @keyframes scaleUp{
-      0%{opacity:0;transform:scaleY(0.0)}
-      25%{opacity:0.25;transform:scaleY(0.25)}
-      50%{opacity:0.5;transform:scaleY(0.5)}
-      75%{opacity:1;transform:scaleY(1)}
-     
-    }
+  
+   
+    .scrollShow{
+      animation: fade-out ;
+    } 
     @keyframes fade-out{
       0%{opacity:0;transform:translateY(100%)}
       25%{opacity:0.25;transform:translateY(75%)}

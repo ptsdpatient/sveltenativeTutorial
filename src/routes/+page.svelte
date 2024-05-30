@@ -9,7 +9,7 @@
 
 
  
-  
+    let bookIcon='📘'
     let isLoading=true;
     let mobileNav=false
     let themeButtonOn=false;
@@ -71,16 +71,16 @@
 {/if}
 
 <!-- line skip -->
-<div class:scrollShow={showDIV} class="w-full h-full flex flex-col justify-around md:justify-center md:pt-10 md:gap-20" style="height:100vh">
+<div class:scrollShow={showDIV} class="w-full h-full flex flex-col justify-around md:justify-center md:gap-20" style="height:100vh">
   <div class="h-1/2 flex flex-col justify-start md:justify-center">
   <p class="md:text-5xl text-4xl font-bold p-5 pt-20 text-center {themeGradient} bg-clip-text text-transparent ">Welcome to the Svelte Native tutorial!</p>
   <p class="md:w-3/4 w-full md:px-0 px-3 mx-auto md:text-3xl text-2xl text-center">
     Are you looking for a tutorial to learn how to build mobile apps with Svelte? 📱✨ Well, look no further because this tutorial covers everything you need to know about mobile app development with Svelte Native! 🚀 📚</p>
   </div>
 
-<div class="md:w-1/2 w-full h-1/4  mx-auto flex flex-col md:flex-row gap-5  text-4xl z-0">
-  <a href="setup" class="mx-auto transform hover:scale-95 transition-all duration-400 group"><button class="{themeGradient}  group-hover:bg-clip-border md:bg-clip-text md:text-transparent px-4 py-2 border-0 rounded-2xl group-hover:text-white text-white group-hover:{themeGradient} transition-all duration-300 ease-in-out">Get Started </button> 🚀</a>
-  <a href="svelte" class="mx-auto transform hover:scale-95 transition-all duration-400 group"><button class="{themeGradient} group-hover:bg-clip-border md:bg-clip-text md:text-transparent px-4 py-2 border-0 rounded-2xl group-hover:text-white text-white group-hover:{themeGradient} transition-all duration-300 ease-in-out">Learn Basics </button> 📖</a>
+<div class="md:w-1/2 w-full mx-auto flex flex-col md:flex-row gap-5  text-4xl z-0">
+  <a href="setup" class="flex flex-row items-center gap-2 mx-auto transform hover:scale-95 transition-all duration-400 group"><button class="{themeGradient}  group-hover:bg-clip-border md:bg-clip-text md:text-transparent px-4 py-2 border-0 rounded-2xl group-hover:text-white text-white group-hover:{themeGradient} transition-all duration-300 ease-in-out  hover:shadow-xl" >Get Started </button> <p class="transform group-hover:-rotate-45 transition-all duration-300">🚀</p></a>
+  <a href="svelte" on:mouseenter={()=>bookIcon='📖'} on:mouseleave={()=>bookIcon='📘'} class="flex flex-row items-center gap-2 mx-auto transform hover:scale-95 transition-all duration-400 group"><button class="{themeGradient} group-hover:bg-clip-border md:bg-clip-text md:text-transparent px-4 py-2 border-0 rounded-2xl group-hover:text-white text-white group-hover:{themeGradient} transition-all duration-300 ease-in-out  hover:shadow-xl" >Learn Basics </button> <p class="transform group-hover:rotate-0 rotate-45 transition-all duration-300">{bookIcon}</p></a>
 </div>
 
 </div>
@@ -129,7 +129,7 @@
 <p class=" md:px-20 hiddenDiv px-5  md:text-left text-2xl">Svelte is very easy to understand  and if you are new to svelte this tutorial has a page dedicated to explain the basics of svelte here <a href="/basics" class="{themeGradient} bg-clip-text text-transparent rounded-2xl hover:underline">Svelte Basics</a> , Svelte also gets a lot of criticism on the internet for being relatively new to the market, its magical abilities because of compile time features and not being in demand in the job market.</p>
 <br>
 <div class="w-full hiddenDiv rounded-xl flex flex-col justify-center" style="height:40vh">
-  <iframe class="md:w-1/3 w-full px-5 mx-auto h-2/3 my-auto md:h-full rounded-2xl" src="https://www.youtube.com/embed/gdemDxgHtcs?si=Dnlib2Rl6voUZCbB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <iframe class="md:w-1/3 w-full mx-auto h-2/3 my-auto md:h-full rounded-2xl transform hover:scale-95 hover:shadow-xl transition-all duration-300"  src="https://www.youtube.com/embed/gdemDxgHtcs?si=Dnlib2Rl6voUZCbB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 

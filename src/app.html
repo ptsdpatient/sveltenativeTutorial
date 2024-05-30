@@ -2,7 +2,38 @@
 <html lang="en">
 	<head>
 		<style>
-  
+
+      .scrollShow{
+          animation: fade-out ;
+        } 
+        @keyframes fade-out{
+          0%{opacity:0;transform:translateY(100%)}
+          25%{opacity:0.25;transform:translateY(75%)}
+          50%{opacity:0.5;transform:translateY(50%)}
+          75%{opacity:1;transform:translateY(0%)}
+        
+        }
+
+
+    .scaleAnim{
+    animation: scaleHead 0.5s forwards;
+    }
+
+    @keyframes scaleHead{
+      from {
+      transform: scale(0);
+      background-color: transparent;
+      backdrop-filter: blur(10px);
+      transform:translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      backdrop-filter: blur(0px);
+      transform:translateY(0px);
+      opacity: 1;
+    }
+   }
     .pattern{
       /* background-color: blue; */
       background-color: rgba(255, 128, 206, 0.158);
