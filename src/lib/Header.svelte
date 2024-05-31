@@ -43,7 +43,7 @@
 </script>
 
 <div class:slideHeader={directionScrolled==='up'} class=" {directionScrolled=='up'?"fixed z-10":""} w-full">
-  <div class="flex flex-row w-full justify-between bg-gray-800">
+  <div class="flex flex-row w-full justify-between bg-gray-800 cursor-default">
   
       <button>
         <p class="text-2xl p-2 px-5 font-bold {themeGradient} text-transparent bg-clip-text" style="white-space:nowrap;">SN Tutorial</p>
@@ -53,9 +53,9 @@
         ≕
       </button>
   
-      <button on:mouseleave={()=>showNavIcon=false} class="hidden md:flex"><div class="tutorialNavigation md:w-full text-center hidden w-1/3  md:flex flex-col md:flex-row justify-around">
+      <button on:mouseleave={()=>showNavIcon=false} class="hidden md:flex"><div class="tutorialNavigation md:w-full text-center hidden w-1/3  md:flex flex-col md:flex-row justify-around items-center ">
       {#each pagination as page}
-      <a class="" href="/{page.link}"><button on:mouseenter={()=>{showNavIcon=true;showNavData=page.name;showNavDescription=page.description;showNavImageURL=page.url}} class=" text-gray-300 px-4 py-2 text-xl hover:{themeGradient}  hover:bg-clip-text hover:text-transparent transition duration-300 ease-in-out">{page.name}</button></a>
+      <a class="" href="/{page.link}"><button on:mouseenter={()=>{showNavIcon=true;showNavData=page.name;showNavDescription=page.description;showNavImageURL=page.url}} class=" text-gray-300 px-4 text-xl hover:{themeGradient}  hover:bg-clip-text hover:text-transparent transition duration-300 ease-in-out">{page.name}</button></a>
       {/each}    
       </div>
       </button>
