@@ -1,6 +1,5 @@
 <script>
     import { onMount } from 'svelte';
-    import icon from '../lib/images/favicon.png'
 
     let pagination =[
     {name:'home',icon:' 🏠 ',url:'./home.png',link:'',description:'navigate back to home page'},

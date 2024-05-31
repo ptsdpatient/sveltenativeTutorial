@@ -1,23 +1,24 @@
 /* Base styles */
 code[class*="language-"],
 pre[class*="language-"] {
-  color: #ececec; 
-  background: #282c3442; 
+  color: #ff606d; /* Base text color */
+  background: #282c34; /* Dark background color */
   font-family: 'Fira Code', monospace;
-  padding:1px;
-  margin:1px;
+  padding: 1px;
+  margin: 1px;
   text-shadow: none;
 }
+
 code[class*="language-"]::selection,
 pre[class*="language-"]::selection {
-  color:rgb(34, 34, 34);
-  background-color: #e4e4e4;
+  color: #e5c07b; /* Selection text color */
+  background-color: #3e4451; /* Selection background color */
 }
+
 /* Line numbers */
 pre[class*="language-"]::before {
   display: none; /* Hide default line numbers if any */
 }
-
 
 /* Token styles */
 .token.comment,
@@ -28,7 +29,7 @@ pre[class*="language-"]::before {
 }
 
 .token.punctuation {
-  color: #abb2bf; /* Punctuation color */
+  color: #dbce14; /* Punctuation color */
 }
 
 .token.property,
@@ -36,12 +37,12 @@ pre[class*="language-"]::before {
 .token.constant,
 .token.symbol,
 .token.deleted {
-  color: #e06c75; /* Property, tags, constants, symbols, deleted */
+  color: #e06c75; /* Property, tag, constant, symbol, deleted color */
 }
 
 .token.boolean,
 .token.number {
-  color: #d19a66; /* Boolean and number */
+  color: #d19a66; /* Boolean and number color */
 }
 
 .token.selector,
@@ -50,7 +51,7 @@ pre[class*="language-"]::before {
 .token.char,
 .token.builtin,
 .token.inserted {
-  color: #98c379; /* Selector, attribute name, string, character, builtin, inserted */
+  color: #98c379; /* Selector, attribute name, string, char, builtin, inserted color */
 }
 
 .token.operator,
@@ -59,7 +60,7 @@ pre[class*="language-"]::before {
 .language-css .token.string,
 .style .token.string,
 .token.variable {
-  color: #dadada; /* Operator, entity, URL, CSS string, style string, variable */
+  color: #56b6c2; /* Operator, entity, URL, CSS string, style string, variable color */
   background: #282c34;
 }
 
@@ -67,16 +68,16 @@ pre[class*="language-"]::before {
 .token.attr-value,
 .token.function,
 .token.class-name {
-  color: #61afef; /* At-rule, attribute value, function, class name */
+  color: #61afef; /* At-rule, attribute value, function, class name color */
 }
 
 .token.keyword {
-  color: #c678dd; /* Keyword */
+  color: #c678dd; /* Keyword color */
 }
 
 .token.regex,
 .token.important {
-  color: #c678dd; /* Regex and important */
+  color: #c678dd; /* Regex and important color */
 }
 
 .token.important,

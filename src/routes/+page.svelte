@@ -79,7 +79,7 @@
   </div>
 
 <div class="md:w-1/2 w-full mx-auto flex flex-col md:flex-row gap-5  text-4xl z-0">
-  <a href="setup" class="flex flex-row items-center gap-2 mx-auto transform hover:scale-95 transition-all duration-400 group"><button class="{themeGradient}  group-hover:bg-clip-border md:bg-clip-text md:text-transparent px-4 py-2 border-0 rounded-2xl group-hover:text-white text-white group-hover:{themeGradient} transition-all duration-300 ease-in-out  hover:shadow-xl" >Get Started </button> <p class="transform group-hover:-rotate-45 transition-all duration-300 group-hover:animate-ping">🚀</p></a>
+  <a href="setup" class="flex flex-row items-center gap-2 mx-auto transform hover:scale-95 transition-all duration-400 group"><button class="{themeGradient}  group-hover:bg-clip-border md:bg-clip-text md:text-transparent px-4 py-2 border-0 rounded-2xl group-hover:text-white text-white group-hover:{themeGradient} transition-all duration-300 ease-in-out  hover:shadow-xl" >Get Started </button> <p class="transform group-hover:-rotate-45 transition-all duration-300 group-focus:animate-ping">🚀</p></a>
   <a href="svelte" on:mouseenter={()=>bookIcon='📖'} on:mouseleave={()=>bookIcon='📘'} class="flex flex-row items-center gap-2 mx-auto transform hover:scale-95 transition-all duration-400 group"><button class="{themeGradient} group-hover:bg-clip-border md:bg-clip-text md:text-transparent px-4 py-2 border-0 rounded-2xl group-hover:text-white text-white group-hover:{themeGradient} transition-all duration-300 ease-in-out  hover:shadow-xl" >Learn Basics </button> <p class="transform group-hover:rotate-0 rotate-45 transition-all duration-300">{bookIcon}</p></a>
 </div>
 

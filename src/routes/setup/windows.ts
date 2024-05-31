@@ -34,6 +34,8 @@ export let Data:DataType[]=[
     terminal:false,
     code:[
         '//install nativescript and check status',
+        'const tanishq="idiot"',
+        'async function gay(sex){  love=69; }',
         '<page>',
         '\t<stacklayout>',
         '\t\t<label text="Hello World! my name is Tanishq Dhote"/>',
