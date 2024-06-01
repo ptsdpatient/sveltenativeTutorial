@@ -83,8 +83,20 @@
 <style>
 
 
-   
-
+   .slideHeader{
+    animation: slideHead 0.5s forwards ease-in-out;
+   }
+   @keyframes slideHead{
+    from{
+      transform:translateY(-10px);
+      opacity:0.8;
+    }
+    to{
+      transform:translateY(0px);
+      opacity:1;
+    }
+    
+   }
   
 </style>
 

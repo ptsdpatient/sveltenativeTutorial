@@ -11,7 +11,6 @@ pre[class*="language-"] {
 
 code[class*="language-"]::selection,
 pre[class*="language-"]::selection {
-  color: #e5c07b; /* Selection text color */
   background-color: #3e4451; /* Selection background color */
 }
 
@@ -53,6 +52,16 @@ pre[class*="language-"]::before {
 .token.inserted {
   color: #98c379; /* Selector, attribute name, string, char, builtin, inserted color */
 }
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted::hover {
+  background-color: #3e4451; /* Selector, attribute name, string, char, builtin, inserted color */
+}
+
 
 .token.operator,
 .token.entity,

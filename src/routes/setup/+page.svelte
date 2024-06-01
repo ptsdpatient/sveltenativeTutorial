@@ -69,13 +69,13 @@
 <div class="w-full h-full pattern">
     <Header></Header>
     <div class="">
-        <br><br><br>
+        <br><br><br><br>
         <div class="w-full scrollShow py-1 flex flex-row justify-center md:text-5xl text-4xl px-5 md:gap-3 md:px-20"><p class="  font-bold {themeGradient} bg-clip-text text-transparent">Welcome to the Svelte Native Setup Tutorial</p>🚀</div>
         <br>
 
         <p class=" md:px-20 scrollShow px-5  md:text-left text-2xl">Lets start with seting up the necessary tools and utilities we need to get started with native script development, it typically includes a text editor like <a href="https://code.visualstudio.com/" class="{themeGradient} bg-clip-text text-transparent rounded-2xl hover:underline">visual studio code</a>, a <a href="https://ubuntu.com/desktop/wsl" class="{themeGradient} bg-clip-text text-transparent rounded-2xl hover:underline">terminal</a> to run tasks along with <a href="https://nodejs.org/" class="{themeGradient} bg-clip-text text-transparent rounded-2xl hover:underline">nodejs</a> and <a href="https://www.python.org/" class="{themeGradient} bg-clip-text text-transparent rounded-2xl hover:underline">python</a> for runtime and installation. In case if you find video tutorials better I recommend you watch these videos.</p>        
         
-
+        <br>
         <div class="w-full scrollShow flex pt-5 flex-col md:flex-row justify-center gap-10 md:gap-20 px-10 md:h-52 h-auto">
           <iframe class="w-full md:w-1/4 h-44 md:h-full rounded-2xl transform hover:scale-95 transition-all duration-300 hover:shadow-xl" src="https://www.youtube.com/embed/hTWGWPG3aWQ?si=3R_-fjlMC2T-MZ2L" title="Svelte Native installation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           <iframe class="w-full md:w-1/4 h-44 md:h-full rounded-2xl transform hover:scale-95 transition-all duration-300 hover:shadow-xl" src="https://www.youtube.com/embed/jyDdEI1Vvd4?si=raxObGO8IsPsEhua" title="Svelte Native installation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -153,36 +153,28 @@
                   <p class="text-3xl hover:text-red-600  transform hover:scale-90 transition-all duration-200" style="cursor:pointer">⊠</p>
                 </div>
               </div>
-
             <div class="w-full flex flex-row overflow-x-auto">
-
                 <div class="flex flex-col py-3 px-3">
                   {#each data.code as line }
                   <pre class="text-gray-300 px-2" style="user-select:none;padding-right:0;margin-right:0">$</pre>
                   {/each}
                 </div>
-
                 <div class="relative w-full h-full py-3 md:mr-0">
                 <button class="hidden md:flex flex-row p-2 border-0 mx-2 absolute text-gray-400 hover:text-white my-1 hover:bg-gray-700 transform hover:scale-95 transition-all duration-300 rounded-xl" style="top:0%;right:0%;"><pre>copy 📎</pre></button>
                 {#each data.code as line}
                 <pre class="text-gray-300 px-2 " style="overflow-x:hidden;">{line}</pre>
                 {/each}                  
                 </div>
-
             </div>
           </div>
           {:else}
-
           <div class="w-11/12 md:w-1/2 hiddenDiv rounded-xl px-5  mx-auto py-3 flex flex-col justify-around relative  " style="min-height:3rem;background-color:#282c34;overflow-x:auto" >
             <button class="hidden md:flex flex-row p-2 px-3 border-0 mx-2 absolute text-gray-400 hover:text-white my-2 hover:bg-gray-700 transform hover:scale-95 transition-all duration-300 rounded-xl" style="top:0%;right:0%;"><pre>copy 📎</pre></button>
-            {#each data.code as line,index}
-           
+            {#each data.code as line,index}           
               <pre class="" style="overflow-x:hidden"><code class="language-js text-xl whitespace-pre-wrap overflow-hidden" style="overflow-x:hidden">{line}</code></pre>
-           
             {/each}
           </div>
           {/if}
-       
           <br>
         <!-- output -->
           
