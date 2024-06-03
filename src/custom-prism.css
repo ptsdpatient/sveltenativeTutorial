@@ -1,11 +1,12 @@
 /* Base styles */
 code[class*="language-"],
 pre[class*="language-"] {
-  color: #ff606d; /* Base text color */
+  color: #fc6a76; /* Base text color */
   background: #282c34; /* Dark background color */
   font-family: 'Fira Code', monospace;
   padding: 1px;
   margin: 1px;
+  padding-right: 6rem;
   text-shadow: none;
 }
 

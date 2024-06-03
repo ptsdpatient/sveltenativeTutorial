@@ -2,7 +2,7 @@
 
 <script>
     import Header from "../../lib/Header.svelte";
-    import {Data} from './windows'
+    import {Data} from './content'
     import {onMount} from 'svelte'
     import Prism from 'prismjs';
     import Footer from "../../lib/Footer.svelte";
@@ -11,10 +11,7 @@
     import '../../../src/custom-prism.css';
 
     let themeGradient='bg-gradient-to-r from-purple-600 to-pink-500'
-    let platforms=[
-      {platform:'Windows',icon:"./windows.png",code:'w'},
-      {platform:'Linux',icon:"./linux.png",code:'l'},
-    ]
+   
 
     let currentPlatformName='Windows'
     let currentPlatformImageURL='./windows.png'

@@ -154,25 +154,20 @@
                 </div>
               </div>
             <div class="w-full flex flex-row overflow-x-auto">
-                <div class="flex flex-col py-3 px-3">
-                  {#each data.code as line }
-                  <pre class="text-gray-300 px-2" style="user-select:none;padding-right:0;margin-right:0">$</pre>
-                  {/each}
-                </div>
+               
                 <div class="relative w-full h-full py-3 md:mr-0">
                 <button class="hidden md:flex flex-row p-2 border-0 mx-2 absolute text-gray-400 hover:text-white my-1 hover:bg-gray-700 transform hover:scale-95 transition-all duration-300 rounded-xl" style="top:0%;right:0%;"><pre>copy 📎</pre></button>
-                {#each data.code as line}
-                <pre class="text-gray-300 px-2 " style="overflow-x:hidden;">{line}</pre>
-                {/each}                  
+               
+                <pre class="text-gray-300 px-6 " style="overflow-x:hidden;">{data.code}</pre>
+                         
                 </div>
             </div>
           </div>
           {:else}
           <div class="w-11/12 md:w-1/2 hiddenDiv rounded-xl px-5  mx-auto py-3 flex flex-col justify-around relative  " style="min-height:3rem;background-color:#282c34;overflow-x:auto" >
             <button class="hidden md:flex flex-row p-2 px-3 border-0 mx-2 absolute text-gray-400 hover:text-white my-2 hover:bg-gray-700 transform hover:scale-95 transition-all duration-300 rounded-xl" style="top:0%;right:0%;"><pre>copy 📎</pre></button>
-            {#each data.code as line,index}           
-              <pre class="" style="overflow-x:hidden"><code class="language-js text-xl whitespace-pre-wrap overflow-hidden" style="overflow-x:hidden">{line}</code></pre>
-            {/each}
+            <pre class="whitespace-nowrap" style=""><code class="language-js text-xl" >{data.code}</code></pre>
+
           </div>
           {/if}
           <br>
@@ -184,7 +179,7 @@
 
         <br>
         <div class="w-11/12 hiddenDiv md:w-1/2  mx-auto ">
-          <button on:click={()=>imageDisplay("./output-"+(dataIndex+1)+".png")}><img class="w-full rounded-xl hover:scale-95 transform transition-all duration-300 hover:shadow-2xl" src={"./output-"+(dataIndex+1)+".png"} alt="output"></button>
+          <button on:click={()=>imageDisplay("./setup-output-"+(dataIndex+1)+".png")}><img class="w-full rounded-xl hover:scale-95 transform transition-all duration-300 hover:shadow-2xl" src={"./setup-output-"+(dataIndex+1)+".png"} alt="output"></button>
         </div>
         <br>
         {/each}

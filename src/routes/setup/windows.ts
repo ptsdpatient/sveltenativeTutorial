@@ -2,7 +2,7 @@ interface DataType{
     terminal:Boolean;
     title:string;
     markdown:string;
-    code:string[];
+    code:string;
     output:string;
 }
 
@@ -15,7 +15,7 @@ export let Data:DataType[]=[
         '//install nativescript and check status',
         'npm install -g nativescript',
         'ns'
-    ],
+    ].join('\n'),
     output:'the template will install nativescript and display status of the nativescript after installation',
 }, {
     title:'Creating a svelte native project',
@@ -26,7 +26,7 @@ export let Data:DataType[]=[
         'ns create mobileApp --svelte',
         'cd mobileApp',
         'ns preview'
-    ],
+    ].join('\n'),
     output:'The prompt will perform the setup of the project withing a minute and run the project for android, use ios in place of android for ios development,scan the qr using native script app scanner and the project will start running on your mobile device',
 }, {
     title:'Creating your first "Hello World" App',
@@ -41,7 +41,7 @@ export let Data:DataType[]=[
         '\t\t<label text="Hello World! my name is Tanishq Dhote"/>',
         '\t</stacklayout>',
         '</page>'
-    ],
+    ].join('\n'),
     output:'the template will install nativescript and display status of the nativescript after installation',
 }, 
     

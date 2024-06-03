@@ -1,7 +1,7 @@
 <title>Calculator</title>
 <script>
     import Header from "../../lib/Header.svelte";
-    import {Data} from './windows'
+    import {Data} from './content'
     import {onMount} from 'svelte'
     import Prism from 'prismjs';
     import Footer from "../../lib/Footer.svelte";
