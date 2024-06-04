@@ -58,6 +58,28 @@
 
 <div class="w-full h-full pattern">
     <Header></Header>
+    <br><br><br><br>
+    <p class="md:text-4xl text-5xl px-5 font-bold md:px-20  md:text-left {themeGradient} bg-clip-text text-transparent  ">Lets take the skills a bit further and create a todo app!</p>
+    <br>
+    <div  class="w-11/12  mx-auto px-2 md:w-2/3 flex flex-col p-4 rounded-xl bg-white bg-opacity-40 gap-2" style="box-shadow:2px 2px 4px 1px gray;"> 
+      <p class="text-xl md:text-2xl px-5">This is the last tutorial, where we proceed and go on to make a todo app with svelte native. I personally don't prefer it, that doesn't mean that you should not try it. I will continue on using java to make android apps in future. React Native and all is a dellusion, infact AI/ML, cryptocurrency everything is a dillusion there are many dumb people out there and too many smart people who are too dumb to realize that they are dumb</p>
+    </div>
+
+    <br>
+    {#each Data as data,index}
+    <br><br>
+    <div  class="w-11/12  mx-auto px-2 md:w-2/3 flex flex-col p-4 rounded-xl bg-white bg-opacity-40 gap-2" style="box-shadow:2px 2px 4px 1px gray;"> 
+      <p class="{themeGradient} px-4 py-1 text-transparent bg-clip-text text-3xl text-left font-bold">{index+1}. {data.title}</p>
+      <p class="text-xl md:text-2xl px-5">{data.markdown}</p>
+    </div>
+    <br>
+
+    <div  class="w-11/12 md:w-1/2 rounded-xl px-5 mx-auto py-5 flex flex-col justify-around relative" style="min-height:3rem;background-color:#282c34;overflow:auto" >
+      <button on:click={()=>navigator.clipboard.writeText(data.code)} class="hidden md:flex flex-row p-2 px-3 border-0 mx-2 absolute text-gray-400 hover:text-white my-2  hover:bg-gray-700 transform hover:scale-95 transition-all duration-300 rounded-xl" style="top:0%;right:0%;"><pre>copy 📎</pre></button>
+        <pre class="whitespace-nowrap;" style=""><code class="language-js text-xl" >{data.code}</code></pre>
+    </div>
+    <br>
+    {/each}
     <Footer></Footer>    
 </div>
 
